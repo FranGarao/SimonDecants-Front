@@ -7,9 +7,9 @@ import { environment } from '../environments/environment';
   providedIn: 'root',
 })
 export class AppService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProduct(): Observable<any> {
-    return this.http.get(`${environment.backendUrl}/api/product`);
+    return this.http.get(`${environment.backendUrl}/products`);
   }
 }

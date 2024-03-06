@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import {
   BrowserModule,
   provideClientHydration,
@@ -8,11 +9,14 @@ import {
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SignInComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
