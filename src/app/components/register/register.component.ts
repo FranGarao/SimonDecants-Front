@@ -34,7 +34,7 @@ export class RegisterComponent {
   }
 
   /* Form */
-  formUser = new FormGroup({
+  formRegister = new FormGroup({
     name: new FormControl(),
     lastName: new FormControl(),
     email: new FormControl(),
@@ -42,17 +42,17 @@ export class RegisterComponent {
   })
 
   get name() {
-    console.log(this.formUser.get('name'));
-    return this.formUser.get('name');
+    console.log(this.formRegister.get('name'));
+    return this.formRegister.get('name');
   }
 
   /* Methods */
   createUser() {
     this.user = {
-      name: this.formUser.get('name')?.value,
-      lastName: this.formUser.get('lastName')?.value,
-      email: this.formUser.get('email')?.value,
-      password: this.formUser.get('password')?.value
+      name: this.formRegister.get('name')?.value,
+      lastName: this.formRegister.get('lastName')?.value,
+      email: this.formRegister.get('email')?.value,
+      password: this.formRegister.get('password')?.value
     }
 
     this.service.createUser(this.user).subscribe(() => {

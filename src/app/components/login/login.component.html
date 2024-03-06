@@ -1,0 +1,11 @@
+<form action="" [formGroup]="formLogin">
+    <div>
+        <label for="">Correo</label>
+        <input formControlName="email" type="text">
+    </div>
+    <div>
+        <label for="">Contraseña</label>
+        <input formControlName="password" type="text">
+    </div>
+</form>
+<button (click)="login()">Iniciar sesión</button>
