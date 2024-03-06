@@ -11,8 +11,8 @@
     background-color: rgba(136, 155, 173, 0.205);
     border-style: none;
     border-radius: 13px;
-    /* z-index: 2;
+    /* z-index: 2; */
     
-    background-image: url('/assets/list.svg'); */
+    background-image: url('/assets/icons/search.svg'); 
     background-size: 100%;
 }
