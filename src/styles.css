@@ -13,7 +13,7 @@ body
   margin-bottom: 90px;
 }
 
-.contenedor
+.container
 {
   width: 97%;
   
@@ -23,7 +23,7 @@ body
   overflow-y: auto;
 }
 
-.contenedor .contenido
+.container .content
 {
   padding: 20px;
   border-radius: 8px; /* redondeo los bordes de los th */

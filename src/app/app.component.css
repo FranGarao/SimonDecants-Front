@@ -1,0 +1,18 @@
+.superior-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-button {
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    background-color: rgba(136, 155, 173, 0.205);
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2;
+    
+    background-image: url('/assets/list.svg'); */
+    background-size: 100%;
+}
