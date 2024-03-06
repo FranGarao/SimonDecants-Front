@@ -20,3 +20,21 @@
 .superior-nav button {
     color: white;
 }
+
+.superior-nav .login-link {
+    width: 90px;
+    height: 42px;
+    cursor: pointer;
+    background-color: #444444;
+    border-style: none;
+    border-radius: 13px;
+}
+
+.superior-nav .register-link {
+    width: 90px;
+    height: 42px;
+    cursor: pointer;
+    background-color: #c0c95e;
+    border-style: none;
+    border-radius: 13px;
+}
