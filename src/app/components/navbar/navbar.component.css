@@ -1,0 +1,65 @@
+
+.superior-nav button {
+    color: white;
+}
+
+.menu-kart-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu-button {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    background-color: #292929;
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2; */
+    
+    background-image: url('/assets/icons/search.svg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.kart-nav {
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    background-color: #292929;
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2; */
+    
+    background-image: url('/assets/icons/cart2.svg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.login-register-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.login-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    background-color: #444444;
+    border-style: none;
+    border-radius: 13px;
+}
+
+.register-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    background-color: #c0c95e;
+    border-style: none;
+    border-radius: 13px;
+}
+
