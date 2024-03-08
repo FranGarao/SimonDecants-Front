@@ -1,6 +1,20 @@
 
+li {
+    list-style: none;
+}
+
 .superior-nav button {
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    width: auto;
+    padding: 0 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.superior-nav ul li button:hover {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .menu-kart-container {
@@ -51,6 +65,11 @@
     background-color: #444444;
     border-style: none;
     border-radius: 13px;
+    height: 2rem;
+}
+
+.login-link:hover {
+    background-color: #525252;
 }
 
 .register-link {
@@ -58,8 +77,13 @@
     height: 42px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #c0c95e;
+    background-color: #bbc54e;
     border-style: none;
     border-radius: 13px;
+    height: 2rem;
+}
+
+.register-link:hover {
+    background-color: #bac44dc9;
 }
 
