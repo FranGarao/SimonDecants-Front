@@ -1,17 +1,49 @@
 
+li {
+    list-style: none;
+}
+
+.superior-nav {
+    z-index: 1;
+}
+
+.superior-nav:first-child {
+    position: relative;
+    bottom: 2rem;
+}
+
 .superior-nav button {
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    width: auto;
+    padding: 0 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
+}
+
+.superior-nav ul li button:hover {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .menu-kart-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: max-content;
+    position: relative;
+    bottom: 2.75rem;
+    gap: 2.5rem;
 }
 
 .menu-button {
     width: 42px;
     height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     background-color: #292929;
     border-style: none;
@@ -26,6 +58,7 @@
 .kart-nav {
     width: 42px;
     height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     background-color: #292929;
     border-style: none;
@@ -40,7 +73,7 @@
 .login-register-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .login-link {
@@ -51,6 +84,11 @@
     background-color: #444444;
     border-style: none;
     border-radius: 13px;
+    height: 2rem;
+}
+
+.login-link:hover {
+    background-color: #525252;
 }
 
 .register-link {
@@ -58,8 +96,36 @@
     height: 42px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #c0c95e;
+    background-color: #bbc54e;
     border-style: none;
     border-radius: 13px;
+    height: 2rem;
 }
 
+.register-link:hover {
+    background-color: #bac44dc9;
+}
+
+
+@media screen and (max-width: 900px) {
+    .menu-kart-container {
+        bottom: unset;
+        gap: 1rem;
+        width: unset;
+        justify-content: center;
+    }
+
+    .superior-nav:first-child {
+        position: unset;
+    }
+
+    .login-register-container {
+        justify-content: center;
+    }
+
+    .superior-nav button {
+        font-size: 0.8rem;
+        margin-top: 1.6rem;
+    }
+    
+}
