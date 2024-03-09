@@ -8,6 +8,13 @@ header a:first-child {
     font-weight: bold;
     font-size: 2rem;  
     z-index: 2;
+    font-family: 'Playfair Display SC', serif;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
 }
 
 header a:first-child:hover {

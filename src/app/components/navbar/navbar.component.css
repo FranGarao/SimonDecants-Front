@@ -20,6 +20,12 @@ li {
     width: auto;
     padding: 0 1rem;
     font-family: 'Josefin Sans', sans-serif;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
 }
 
 .superior-nav ul li button:hover {
