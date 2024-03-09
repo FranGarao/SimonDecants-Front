@@ -106,3 +106,26 @@ li {
     background-color: #bac44dc9;
 }
 
+
+@media screen and (max-width: 900px) {
+    .menu-kart-container {
+        bottom: unset;
+        gap: 1rem;
+        width: unset;
+        justify-content: center;
+    }
+
+    .superior-nav:first-child {
+        position: unset;
+    }
+
+    .login-register-container {
+        justify-content: center;
+    }
+
+    .superior-nav button {
+        font-size: 0.8rem;
+        margin-top: 1.6rem;
+    }
+    
+}
