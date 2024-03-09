@@ -3,6 +3,15 @@ li {
     list-style: none;
 }
 
+.superior-nav {
+    z-index: 1;
+}
+
+.superior-nav:first-child {
+    position: relative;
+    bottom: 2rem;
+}
+
 .superior-nav button {
     color: white;
     font-size: 1rem;
@@ -19,13 +28,16 @@ li {
 
 .menu-kart-container {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    width: max-content;
+    position: relative;
+    bottom: 2.75rem;
+    gap: 2.5rem;
 }
 
 .menu-button {
     width: 42px;
     height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     background-color: #292929;
     border-style: none;
@@ -40,6 +52,7 @@ li {
 .kart-nav {
     width: 42px;
     height: 42px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
     background-color: #292929;
     border-style: none;
@@ -54,7 +67,7 @@ li {
 .login-register-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .login-link {

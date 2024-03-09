@@ -1,0 +1,23 @@
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header a:first-child {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;  
+    z-index: 2;
+}
+
+header a:first-child:hover {
+    cursor: pointer;
+}
+
+.simon {
+    color: white;
+}
+
+.decants {
+    color: #bbc54e;
+}
