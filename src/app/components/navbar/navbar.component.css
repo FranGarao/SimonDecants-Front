@@ -33,11 +33,10 @@ li {
 }
 
 .menu-kart-container {
-    display: flex;
-    width: max-content;
     position: relative;
+    width: max-content;
+    text-align: start;
     bottom: 2.75rem;
-    gap: 2.5rem;
 }
 
 .menu-button {
@@ -71,9 +70,7 @@ li {
 }
 
 .login-register-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    text-align: end;
 }
 
 .login-link {
@@ -110,9 +107,8 @@ li {
 @media screen and (max-width: 900px) {
     .menu-kart-container {
         bottom: unset;
-        gap: 1rem;
         width: unset;
-        justify-content: center;
+        text-align: center;
     }
 
     .superior-nav:first-child {
@@ -120,7 +116,7 @@ li {
     }
 
     .login-register-container {
-        justify-content: center;
+        text-align: center;
     }
 
     .superior-nav button {

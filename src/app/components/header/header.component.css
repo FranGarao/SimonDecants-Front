@@ -1,6 +1,5 @@
 header {
-    display: flex;
-    justify-content: center;
+    text-align: center;
 }
 
 header a:first-child {
@@ -9,6 +8,7 @@ header a:first-child {
     font-size: 2rem;  
     z-index: 2;
     font-family: 'Playfair Display SC', serif;
+    position: relative;
 
     /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
     user-select: none;
