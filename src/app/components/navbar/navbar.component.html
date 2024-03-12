@@ -1,15 +1,14 @@
-<nav class="superior-nav">
-    <ul>
-        <li class="login-register-container">
-            <button class="login-link">Iniciar Sesión</button>
-            <button class="register-link">Registrarse</button>      
-        </li>
-    </ul>
-    <ul>
-        <li class="menu-kart-container">
-            <button class="menu-button"></button>
-            <button class="kart-nav"></button>
-        </li>
-    </ul>
+<nav class="sidebar">
+  <!-- la clase sidebar no existe en css, la deje como referencia -->
+  <ul>
+    <li><a [routerLink]="['/home']">Inicio</a></li>
+    <li>
+      Categorias
+      <ul>
+        <li><a [routerLink]="['/path', routeParam]">Árabes</a></li>
+        <li><a [routerLink]="['/path', routeParam]">Diseñador</a></li>
+      </ul>
+    </li>
+    <li><a [routerLink]="['/path']">Preguntas Frecuentes</a></li>
+  </ul>
 </nav>
-  
