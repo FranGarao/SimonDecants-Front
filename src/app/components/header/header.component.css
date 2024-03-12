@@ -55,7 +55,7 @@ header a:first-child:hover {
 .kart-nav {
     width: 30px;
     height: 33px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
+    margin: 0 0.5rem 0rem 0.5rem;
     cursor: pointer;
     background-color: #292929;
     border-style: none;
@@ -101,6 +101,31 @@ header a:first-child:hover {
     background-color: #bac44dc9;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
     
+    .login-register-container {
+        margin-left: unset;
+        white-space: nowrap;
+        margin-top: 1rem;
+    }
+
+    .title-position {
+        position: relative;
+        left: unset;
+        transform: unset;
+    }
+
+    .kart-nav {
+        margin-top: 1rem;
+    }
+
+    .login-register-container button {
+        font-size: 0.7rem;
+    }
 }

@@ -39,3 +39,10 @@ li, li a {
     text-decoration: none;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+    }
+}
