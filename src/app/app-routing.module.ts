@@ -7,13 +7,12 @@ import { LoginComponent } from './components/login/login.component';
 const routes: Routes = [
   { path: 'home', component: AppComponent }, // Ruta por defecto
   { path: 'users/register', component: RegisterComponent },
-  { path: 'users/login', component: LoginComponent }
+  { path: 'users/login', component: LoginComponent },
   // { path: '**', component: ComponenteNotFoundComponent } // Ruta para manejar errores
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -16,11 +16,23 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, HomeComponent, NavbarComponent, HeaderComponent, FooterComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
