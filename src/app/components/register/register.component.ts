@@ -27,7 +27,10 @@ import { FormControl, FormGroup, Validators, ValidationErrors, AbstractControl }
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  //! Necesito users??
   private users: Users = [];
+
+  //TODO: crear interfaz user
   private user = {} as User;
   constructor(private service: AppService) {
 
