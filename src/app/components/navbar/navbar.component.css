@@ -1,1 +1,41 @@
+.sidebar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    width: 19%;
+    height: 100%;
+    background: #111;
+    opacity: 0.9;
+}
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.35rem;
+}
+
+.open-nav-btn {
+    width: 30px;
+    height: 33px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    background-color: #292929;
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2; */
+    
+    background-image: url('/assets/icons/search.svg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+li, li a {
+    margin-top: 23px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgb(195, 219, 241);
+    text-decoration: none;
+    cursor: pointer;
+}

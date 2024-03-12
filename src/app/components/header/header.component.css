@@ -1,14 +1,21 @@
 header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-position {
+    position: absolute; /* Hace que este contenedor tenga posición absoluta */
+    left: 50%; /* Mueve el elemento hacia el centro del header */
+    transform: translateX(-50%); /* Corrige la posición del elemento */
 }
 
 header a:first-child {
     text-decoration: none;
     font-weight: bold;
     font-size: 2rem;  
-    z-index: 2;
     font-family: 'Playfair Display SC', serif;
-    position: relative;
+    text-align: center;
 
     /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
     user-select: none;
@@ -45,28 +52,6 @@ header a:first-child:hover {
     -ms-user-select: none;      /* Para Internet Explorer/Edge */
 }
 
-.menu-kart-container {
-    position: relative;
-    width: max-content;
-    text-align: start;
-    bottom: 5rem;
-}
-
-.menu-button {
-    width: 30px;
-    height: 33px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
-    cursor: pointer;
-    background-color: #292929;
-    border-style: none;
-    border-radius: 13px;
-    /* z-index: 2; */
-    
-    background-image: url('/assets/icons/search.svg'); 
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
 .kart-nav {
     width: 30px;
     height: 33px;
@@ -82,16 +67,14 @@ header a:first-child:hover {
     background-repeat: no-repeat;
 }
 
-.login-register-container {
-    text-align: end;
-    position: relative;
-    bottom: 2.1rem;
+ .login-register-container {
+    margin-left: auto;
 }
 
 .login-link {
     width: 90px;
     height: 42px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
+    margin: 0 0.5rem 0 0.5rem;
     cursor: pointer;
     background-color: #444444;
     border-style: none;
@@ -106,7 +89,7 @@ header a:first-child:hover {
 .register-link {
     width: 90px;
     height: 42px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
+    margin: 0 0.5rem 0 0.5rem;
     cursor: pointer;
     background-color: #bbc54e;
     border-style: none;
@@ -119,17 +102,5 @@ header a:first-child:hover {
 }
 
 @media screen and (max-width: 900px) {
-    .login-register-container {
-        text-align: center;
-        position: relative;
-        bottom: -0.9000000000000004rem;
-    }
-
-    .menu-kart-container {
-        position: relative;
-        width: unset;
-        text-align: center;
-        bottom: -1rem;
-    }
     
 }
