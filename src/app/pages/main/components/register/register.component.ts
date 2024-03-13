@@ -37,12 +37,18 @@ export class RegisterComponent {
   private user = {} as User;
   constructor(private service: AppService) {}
 
+  ngOnInit() {
+    this.getUsers();
+  }
   /* Form */
   formRegister = new FormGroup({
     name: new FormControl(),
     lastName: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
+    phone: new FormControl(),
+    cp: new FormControl(),
+    address: new FormControl(),
   });
 
   get name() {
@@ -51,12 +57,26 @@ export class RegisterComponent {
   }
 
   /* Methods */
+  getUsers() {
+    this.service.getUsers().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error: any) => {
+        console.error(error);
+      },
+    );
+  }
+
   createUser() {
     this.user = {
       name: this.formRegister.get('name')?.value,
       lastName: this.formRegister.get('lastName')?.value,
       email: this.formRegister.get('email')?.value,
       password: this.formRegister.get('password')?.value,
+      cp: this.formRegister.get('cp')?.value,
+      phone: this.formRegister.get('phone')?.value,
+      address: this.formRegister.get('address')?.value,
     };
 
     this.service.createUser(this.user).subscribe(() => {

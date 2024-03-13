@@ -15,14 +15,18 @@ export class AppService {
     return this.http.get(`${environment.backendUrl}/products`);
   }
   getUsers(): Observable<any> {
-    return this.http.get(`${environment.backendUrl}/users`);
+    const url = `${environment.backendUrl}/users`;
+    return this.http.get(url);
   }
 
   createUser(user: User): Observable<{}> {
-    console.log({ user: user });
-    return this.http.post(`${environment.backendUrl}/users/create`, user);
+    const url = `${environment.backendUrl}/users/create`;
+    console.log(user);
+
+    return this.http.post(url, user);
   }
   login(user: UserLogin): Observable<{}> {
-    return this.http.post(`${environment.backendUrl}/users/login`, user);
+    const url = `${environment.backendUrl}/users/login`;
+    return this.http.post(url, user); // Fixed: Added user as the second argument
   }
 }
