@@ -46,7 +46,17 @@ li, li a {
 
 .submenu {
     display: none;
+    background-color: rgb(44, 44, 44);
 }
+
+.submenu li:first-child {
+    padding-top: 23px;
+}
+
+.submenu li:last-child {
+    padding-bottom: 23px;
+}
+
 
 @media screen and (max-width: 1000px) {
     .sidebar {
