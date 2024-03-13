@@ -1,23 +1,27 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 
 import {
   BrowserModule,
   provideClientHydration,
 } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+/* Import components */
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './components/register/register.component';
-import { LoginComponent } from './components/login/login.component';
-import { HomeComponent } from './pages/home/home.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { RegisterComponent } from './pages/main/components/register/register.component';
+import { LoginComponent } from './pages/main/components/login/login.component';
+import { HomeComponent } from './pages/main/components/home/home.component';
+import { NavbarComponent } from './pages/main/components/navbar/navbar.component';
+import { HeaderComponent } from './pages/main/components/header/header.component';
+import { FooterComponent } from './pages/main/components/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MainComponent } from './main/main.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { MainComponent } from './pages/main/main.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+/* Modules */
+import { MainModule } from './pages/main/main.module';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule,
+    MainModule,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
