@@ -12,11 +12,11 @@
 .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 1.35rem;
+    margin-top: 1rem;
 }
 
 .open-nav-btn {
-    width: 30px;
+    width: 38px;
     height: 33px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
@@ -25,9 +25,13 @@
     border-radius: 13px;
     /* z-index: 2; */
     
-    background-image: url('/assets/icons/search.svg'); 
+    background-image: url('/assets/icons/list.svg'); 
     background-size: 100%;
     background-repeat: no-repeat;
+}
+
+.open-nav-btn:hover { 
+    background-image: url('/assets/icons/list-hover.svg'); 
 }
 
 li, li a {
