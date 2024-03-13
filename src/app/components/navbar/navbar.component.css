@@ -34,6 +34,30 @@
     background-image: url('/assets/icons/list-hover.svg'); 
 }
 
+.category-container {
+    display: flex;
+}
+
+.category-container p {
+    margin-left: auto;
+}
+
+.down-arrow {
+    width: 21px;
+    height: 33px;
+    margin: 0 0.5rem 0.5rem 0.5rem;
+    cursor: pointer;
+    background-color: #444;
+    border-style: none;
+    border-radius: 13px;
+    margin-left: 1rem;
+    margin-right: 1.3rem;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('/assets/icons/chevron-compact-down.svg'); 
+}
+
 li, li a {
     margin-top: 23px;
     list-style-type: none;

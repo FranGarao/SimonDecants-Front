@@ -15,7 +15,10 @@
     <li class="input-container"><input type="search" placeholder="Buscar producto"></li>
     <li><a [routerLink]="['/home']">Inicio</a></li>
     <li class="dropdown">
-      Categorias
+      <div class="category-container">
+        <p>Categoria</p>
+        <div class="down-arrow"></div>
+      </div>
       <ul class="submenu">
         <li><a [routerLink]="['/path', routeParam]">Árabes</a></li>
         <li><a [routerLink]="['/path', routeParam]">Diseñador</a></li>
