@@ -40,6 +40,29 @@ li, li a {
     cursor: pointer;
 }
 
+.input-container {
+    background-color: #bbc54e;
+    height: rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+input {
+    border: none;
+    outline: none;
+    background-color: #73737382;
+    max-width: 8rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.432);
+    text-align: center;
+}
+
 .dropdown:hover .submenu {
     display: block;
 }
