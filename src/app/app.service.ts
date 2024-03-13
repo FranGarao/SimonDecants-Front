@@ -9,7 +9,7 @@ import { UserLogin } from './interfaces/UserLogin';
   providedIn: 'root',
 })
 export class AppService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getProduct(): Observable<any> {
     return this.http.get(`${environment.backendUrl}/products`);
@@ -19,7 +19,7 @@ export class AppService {
   }
 
   createUser(user: User): Observable<{}> {
-    console.log(user);
+    console.log({ user: user });
     return this.http.post(`${environment.backendUrl}/users/create`, user);
   }
   login(user: UserLogin): Observable<{}> {
