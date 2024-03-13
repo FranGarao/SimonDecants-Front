@@ -1,10 +1,13 @@
-
-
-
 import { Component } from '@angular/core';
-import { Users, User } from '../../interfaces/Users';
-import { AppService } from '../../app.service';
-import { FormControl, FormGroup, Validators, ValidationErrors, AbstractControl } from '@angular/forms';
+import { Users, User } from '../../../../interfaces/Users';
+import { AppService } from '../../../../app.service';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  ValidationErrors,
+  AbstractControl,
+} from '@angular/forms';
 
 // function customValidation(control: AbstractControl): ValidationErrors | null {
 //   const startDate = control.get('startDate').value;
@@ -17,14 +20,14 @@ import { FormControl, FormGroup, Validators, ValidationErrors, AbstractControl }
 //   const endDateValidation = endDate > currentDate || endDate < startDate ;
 
 //   if (startDateValidation || endDateValidation) {
-//     return { datesInvalid: true }; 
+//     return { datesInvalid: true };
 //   }
-//   return null; 
+//   return null;
 // }
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrl: './register.component.css',
 })
 export class RegisterComponent {
   //! Necesito users??
@@ -32,17 +35,21 @@ export class RegisterComponent {
 
   //TODO: crear interfaz user
   private user = {} as User;
-  constructor(private service: AppService) {
+  constructor(private service: AppService) {}
 
+  ngOnInit() {
+    this.getUsers();
   }
-
   /* Form */
   formRegister = new FormGroup({
     name: new FormControl(),
     lastName: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
-  })
+    phone: new FormControl(),
+    cp: new FormControl(),
+    address: new FormControl(),
+  });
 
   get name() {
     console.log(this.formRegister.get('name'));
@@ -50,17 +57,30 @@ export class RegisterComponent {
   }
 
   /* Methods */
+  getUsers() {
+    this.service.getUsers().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error: any) => {
+        console.error(error);
+      },
+    );
+  }
+
   createUser() {
     this.user = {
       name: this.formRegister.get('name')?.value,
       lastName: this.formRegister.get('lastName')?.value,
       email: this.formRegister.get('email')?.value,
-      password: this.formRegister.get('password')?.value
-    }
+      password: this.formRegister.get('password')?.value,
+      cp: this.formRegister.get('cp')?.value,
+      phone: this.formRegister.get('phone')?.value,
+      address: this.formRegister.get('address')?.value,
+    };
 
     this.service.createUser(this.user).subscribe(() => {
       return this.user;
-    }
-    )
+    });
   }
-} 
+}
