@@ -9,4 +9,7 @@ export interface User {
   phone: string;
   address: string;
   phone: string;
+  addressNumber: string;
+  town: string;
+  city: string;
 }

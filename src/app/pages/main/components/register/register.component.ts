@@ -49,6 +49,9 @@ export class RegisterComponent {
     phone: new FormControl(),
     cp: new FormControl(),
     address: new FormControl(),
+    addressNumber: new FormControl(),
+    town: new FormControl(),
+    city: new FormControl(),
   });
 
   get name() {
@@ -77,6 +80,9 @@ export class RegisterComponent {
       cp: this.formRegister.get('cp')?.value,
       phone: this.formRegister.get('phone')?.value,
       address: this.formRegister.get('address')?.value,
+      addressNumber: this.formRegister.get('addressNumber')?.value,
+      town: this.formRegister.get('town')?.value,
+      city: this.formRegister.get('city')?.value,
     };
 
     this.service.createUser(this.user).subscribe(() => {
