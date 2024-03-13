@@ -45,4 +45,17 @@ li, li a {
         position: relative;
         width: 100%;
     }
+
+    .btn-container {
+        background-color: #292929;
+        margin-top: 0;
+        height: 1rem;
+    }
+
+    .open-nav-btn {
+        position: relative;
+        bottom: 2rem;
+        right: 5%;
+        transform: translateX(-50%);
+    }
 }
