@@ -1,14 +1,21 @@
 header {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-position {
+    position: absolute; /* Hace que este contenedor tenga posición absoluta */
+    left: 50%; /* Mueve el elemento hacia el centro del header */
+    transform: translateX(-50%); /* Corrige la posición del elemento */
 }
 
 header a:first-child {
     text-decoration: none;
     font-weight: bold;
     font-size: 2rem;  
-    z-index: 2;
     font-family: 'Playfair Display SC', serif;
+    text-align: center;
 
     /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
     user-select: none;
@@ -27,4 +34,99 @@ header a:first-child:hover {
 
 .decants {
     color: #bbc54e;
+}
+
+.login-register-container button {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    width: auto;
+    padding: 0 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
+}
+
+.kart-nav {
+    width: 30px;
+    height: 33px;
+    margin: 0 0.5rem 0rem 0.5rem;
+    cursor: pointer;
+    background-color: #292929;
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2; */
+    
+    background-image: url('/assets/icons/cart2.svg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+ .login-register-container {
+    margin-left: auto;
+}
+
+.login-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+    background-color: #444444;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+}
+
+.login-link:hover {
+    background-color: #525252;
+}
+
+.register-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+    background-color: #bbc54e;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+}
+
+.register-link:hover {
+    background-color: #bac44dc9;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .login-register-container {
+        margin-left: unset;
+        white-space: nowrap;
+        margin-top: 1rem;
+    }
+
+    .title-position {
+        position: relative;
+        left: unset;
+        transform: unset;
+    }
+
+    .kart-nav {
+        margin-top: 1rem;
+        margin-left: 5rem;
+    }
+
+    .login-register-container button {
+        font-size: 0.7rem;
+    }
 }
