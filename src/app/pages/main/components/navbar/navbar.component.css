@@ -5,14 +5,24 @@
     display: block;
     width: 19%;
     height: 100%;
+    /* background: #444; */
+}
+
+.sidebar-content {
+    display: none;
     background: #444;
-    opacity: 0.9;
+    top: 5em;
+    left: 0;
+    position: fixed;
+    width: 19%;
+    height: 100%;
+    border-top-right-radius: 15px;
 }
 
 .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1rem;   
 }
 
 .open-nav-btn {
@@ -20,7 +30,7 @@
     height: 33px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #444;
+    background-color: #4440;
     border-style: none;
     border-radius: 13px;
     /* z-index: 2; */
@@ -39,7 +49,9 @@
 }
 
 .category-container p {
-    margin-left: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .down-arrow {
@@ -50,8 +62,9 @@
     background-color: #444;
     border-style: none;
     border-radius: 13px;
-    margin-left: 1rem;
-    margin-right: 1.3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(270%);
 
     background-size: 100%;
     background-repeat: no-repeat;
@@ -70,10 +83,11 @@ li, li a {
 
 .input-container {
     background-color: #bbc54e;
-    height: rem;
     display: flex;
     justify-content: center;
     padding: 1rem;
+    margin-top: 0;
+    border-top-right-radius: 15px;
 }
 
 
@@ -91,9 +105,9 @@ input::placeholder {
     text-align: center;
 }
 
-.dropdown:hover .submenu {
+/* .dropdown:hover .submenu {
     display: block;
-}
+} */
 
 .submenu {
     display: none;
@@ -108,11 +122,15 @@ input::placeholder {
     padding-bottom: 23px;
 }
 
+.open {
+    display: block;
+}
 
 @media screen and (max-width: 1000px) {
-    .sidebar {
+    .sidebar, .sidebar-content {
         position: relative;
         width: 100%;
+        top: 0;
     }
 
     .btn-container {
@@ -128,4 +146,9 @@ input::placeholder {
         transform: translateX(-50%);
         background-color: #292929;
     }
+
+    .input-container {
+        border-top-right-radius: 0;
+    }
+
 }

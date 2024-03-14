@@ -1,15 +1,15 @@
 <nav class="sidebar">
   <div class="btn-container">
-    <button class="open-nav-btn"></button>
+    <button class="open-nav-btn" (click)="openNavbar()"></button>
   </div>
   
-  <ul>
+  <ul class="sidebar-content">
     <!-- <button class="close-nav-btn" ></button> -->
     <li class="input-container"><input type="search" placeholder="Buscar producto"></li>
     <li><a [routerLink]="['/home']">Inicio</a></li>
     <li class="dropdown">
-      <div class="category-container">
-        <p>Categoria</p>
+      <div class="category-container" (click)="toggleSubMenu()">
+        <p>Categorias</p>
         <div class="down-arrow"></div>
       </div>
       <ul class="submenu">
