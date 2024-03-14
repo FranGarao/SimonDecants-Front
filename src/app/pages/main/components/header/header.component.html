@@ -4,13 +4,13 @@
 
 <header>
     <div class="title-position">
-        <a [routerLink]="['/home']"><span class="simon">Simon</span><span class="decants">Decants</span></a>
+        <a [routerLink]="['/']"><span class="simon">Simon</span><span class="decants">Decants</span></a>
     </div>
     <div class="login-register-container">
         <button class="login-link">Iniciar Sesión</button>
-        <button class="register-link">Registrarse</button>      
+        <button [routerLink]="['/user/register']" class="register-link">Registrarse</button>
     </div>
     <!-- <div class="menu-kart-container"> -->
-        <button class="kart-nav"></button>
+    <button class="kart-nav"></button>
     <!-- </div> -->
 </header>

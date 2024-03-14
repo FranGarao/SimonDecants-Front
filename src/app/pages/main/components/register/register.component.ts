@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Users, User } from '../../../../interfaces/Users';
+import { Users, User } from '../../interfaces/Users';
 import { AppService } from '../../../../app.service';
 import {
   FormControl,
@@ -40,48 +40,42 @@ export class RegisterComponent {
   ngOnInit() {
     this.getUsers();
   }
+
   /* Form */
   formRegister = new FormGroup({
     name: new FormControl(),
-    lastName: new FormControl(),
+    last_name: new FormControl(),
     email: new FormControl(),
     password: new FormControl(),
     phone: new FormControl(),
     cp: new FormControl(),
     address: new FormControl(),
-    addressNumber: new FormControl(),
+    address_number: new FormControl(),
     town: new FormControl(),
+    province: new FormControl(),
     city: new FormControl(),
   });
 
+  //TODO: Revisar si es util este metodo (para que sirve get?)
   get name() {
     console.log(this.formRegister.get('name'));
     return this.formRegister.get('name');
   }
 
   /* Methods */
-  getUsers() {
-    this.service.getUsers().subscribe(
-      (users) => {
-        this.users = users;
-      },
-      (error: any) => {
-        console.error(error);
-      },
-    );
-  }
+  onSubmit(event: Event) {
+    event.preventDefault();
 
-  createUser() {
     this.user = {
       name: this.formRegister.get('name')?.value,
-      lastName: this.formRegister.get('lastName')?.value,
+      last_name: this.formRegister.get('last_name')?.value,
       email: this.formRegister.get('email')?.value,
       password: this.formRegister.get('password')?.value,
       cp: this.formRegister.get('cp')?.value,
       phone: this.formRegister.get('phone')?.value,
       address: this.formRegister.get('address')?.value,
-      addressNumber: this.formRegister.get('addressNumber')?.value,
-      town: this.formRegister.get('town')?.value,
+      address_number: this.formRegister.get('address_number')?.value,
+      province: this.formRegister.get('province')?.value,
       city: this.formRegister.get('city')?.value,
     };
 
@@ -89,4 +83,17 @@ export class RegisterComponent {
       return this.user;
     });
   }
+  getUsers() {
+    this.service.getUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+        console.log(this.users);
+      },
+      error: (error: any) => {
+        console.error(error);
+      },
+    });
+  }
+
+  createUser() {}
 }

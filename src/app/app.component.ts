@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AppService } from './app.service';
-import { ProductsList } from './interfaces/Products';
+import { ProductsList } from './pages/main/interfaces/Products';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
