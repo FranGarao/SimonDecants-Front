@@ -1,131 +1,131 @@
-
-li {
-    list-style: none;
+.sidebar {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    width: 19%;
+    height: 100%;
+    background: #444;
+    opacity: 0.9;
 }
 
-.superior-nav {
-    z-index: 1;
-}
-
-.superior-nav:first-child {
-    position: relative;
-    bottom: 2rem;
-}
-
-.superior-nav button {
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
-    white-space: nowrap;
-    width: auto;
-    padding: 0 1rem;
-    font-family: 'Josefin Sans', sans-serif;
-
-    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
-    user-select: none;
-    -moz-user-select: none;     /* Para Firefox */
-    -webkit-user-select: none;  /* Para Safari y Chrome */
-    -ms-user-select: none;      /* Para Internet Explorer/Edge */
-}
-
-.superior-nav ul li button:hover {
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-.menu-kart-container {
+.btn-container {
     display: flex;
-    width: max-content;
-    position: relative;
-    bottom: 2.75rem;
-    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
-.menu-button {
-    width: 42px;
-    height: 42px;
+.open-nav-btn {
+    width: 38px;
+    height: 33px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #292929;
+    background-color: #444;
     border-style: none;
     border-radius: 13px;
     /* z-index: 2; */
     
-    background-image: url('/assets/icons/search.svg'); 
+    background-image: url('/assets/icons/list.svg'); 
     background-size: 100%;
     background-repeat: no-repeat;
 }
 
-.kart-nav {
-    width: 42px;
-    height: 42px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
-    cursor: pointer;
-    background-color: #292929;
-    border-style: none;
-    border-radius: 13px;
-    /* z-index: 2; */
-    
-    background-image: url('/assets/icons/cart2.svg'); 
-    background-size: 100%;
-    background-repeat: no-repeat;
+.open-nav-btn:hover { 
+    background-image: url('/assets/icons/list-hover.svg'); 
 }
 
-.login-register-container {
+.category-container {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
 }
 
-.login-link {
-    width: 90px;
-    height: 42px;
+.category-container p {
+    margin-left: auto;
+}
+
+.down-arrow {
+    width: 21px;
+    height: 33px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #444444;
+    background-color: #444;
     border-style: none;
     border-radius: 13px;
-    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1.3rem;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-image: url('/assets/icons/chevron-compact-down.svg'); 
 }
 
-.login-link:hover {
-    background-color: #525252;
-}
-
-.register-link {
-    width: 90px;
-    height: 42px;
-    margin: 0 0.5rem 0.5rem 0.5rem;
+li, li a {
+    margin-top: 23px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgb(195, 219, 241);
+    text-decoration: none;
     cursor: pointer;
+}
+
+.input-container {
     background-color: #bbc54e;
-    border-style: none;
-    border-radius: 13px;
-    height: 2rem;
-}
-
-.register-link:hover {
-    background-color: #bac44dc9;
+    height: rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
 }
 
 
-@media screen and (max-width: 900px) {
-    .menu-kart-container {
-        bottom: unset;
-        gap: 1rem;
-        width: unset;
-        justify-content: center;
+input {
+    border: none;
+    outline: none;
+    background-color: #73737382;
+    max-width: 8rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.432);
+    text-align: center;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    background-color: rgb(44, 44, 44);
+}
+
+.submenu li:first-child {
+    padding-top: 23px;
+}
+
+.submenu li:last-child {
+    padding-bottom: 23px;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
     }
 
-    .superior-nav:first-child {
-        position: unset;
+    .btn-container {
+        background-color: #292929;
+        margin-top: 0;
+        height: 1rem;
     }
 
-    .login-register-container {
-        justify-content: center;
+    .open-nav-btn {
+        position: relative;
+        bottom: 2rem;
+        right: 5%;
+        transform: translateX(-50%);
+        background-color: #292929;
     }
-
-    .superior-nav button {
-        font-size: 0.8rem;
-        margin-top: 1.6rem;
-    }
-    
 }
