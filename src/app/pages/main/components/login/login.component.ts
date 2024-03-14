@@ -7,7 +7,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { AppService } from '../../../../app.service';
-import { UserLogin } from '../../../../interfaces/UserLogin';
+import { UserLogin } from '../../interfaces/UserLogin';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

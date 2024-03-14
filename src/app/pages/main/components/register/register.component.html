@@ -1,31 +1,51 @@
-<form style="color: #fff" action="#" [formGroup]="formRegister">
+<form class="form-register" [formGroup]="formRegister">
     <div>
         <label for="name">Nombre</label>
-        <input formControlName="name" type="text">
+        <input formControlName="name" name="name" type="text" required>
+    </div>
+    <div *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+        <p *ngIf="name?.errors?.['required']">Campo invalido</p>
     </div>
     <div>
-        <label for="">Apellido</label>
-        <input formControlName="lastName" type="text">
+        <label for="last_name">Apellido</label>
+        <input formControlName="last_name" name="last_name" type="text">
+    </div>
+    <div *ngIf="last_name?.invalid && (last_name?.touched || last_name?.dirty)">
+        <p *ngIf="last_name?.errors?.['required']">Campo invalido</p>
     </div>
     <div>
-        <label for="">Correo electrónico</label>
-        <input formControlName="email" type="text">
+        <label for="email">Correo electrónico</label>
+        <input formControlName="email" name="email" type="text">
+    </div>
+    <!-- provincia/ciudad usar un selec/buscador para que no se ingresen provincias/ciudades invalidas o inexistentes -->
+    <div>
+        <label for="province">Provincia</label>
+        <input formControlName="province" name="province" type="text">
     </div>
     <div>
-        <label for="">Dirección</label>
-        <input formControlName="address" type="text">
+        <label for="city">Ciudad</label>
+        <input formControlName="city" name="city" type="text">
     </div>
     <div>
-        <label for="">Telefono (opcional)</label>
-        <input formControlName="phone" type="text">
+        <label for="address">Dirección</label>
+        <input formControlName="address" name="address" type="text">
+    </div>
+    <!-- hay que cambiar los nombres -->
+    <div>
+        <label for="address_number">Numero de direccion</label>
+        <input formControlName="address_number" name="address_number" type="text">
     </div>
     <div>
-        <label for="">Código postal</label>
-        <input formControlName="cp" type="text">
+        <label for="phone">Telefono (opcional)</label>
+        <input formControlName="phone" name="phone" type="text">
     </div>
     <div>
-        <label for="">Contraseña</label>
-        <input formControlName="password" type="text">
+        <label for="cp">Código postal</label>
+        <input formControlName="cp" name="cp" type="text">
     </div>
-    <button (click)="createUser()">Registrarme</button>
+    <div>
+        <label for="password">Contraseña</label>
+        <input formControlName="password" name="password" type="text">
+    </div>
+    <button (click)="onSubmit($event)">Registrarme</button>
 </form>
