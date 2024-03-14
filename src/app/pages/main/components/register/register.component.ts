@@ -32,6 +32,7 @@ import {
 export class RegisterComponent {
   //! Necesito users??
   private users: Users = [];
+  public formSubmitted: boolean = false;
 
   //TODO: crear interfaz user
   private user = {} as User;
@@ -43,41 +44,47 @@ export class RegisterComponent {
 
   /* Form */
   formRegister = new FormGroup({
-    name: new FormControl(),
-    last_name: new FormControl(),
-    email: new FormControl(),
-    password: new FormControl(),
-    phone: new FormControl(),
-    cp: new FormControl(),
-    address: new FormControl(),
-    address_number: new FormControl(),
-    town: new FormControl(),
-    province: new FormControl(),
-    city: new FormControl(),
+    name: new FormControl('', Validators.required),
+    last_name: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+    phone: new FormControl('', Validators.required),
+    cp: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    address_number: new FormControl('', Validators.required),
+    town: new FormControl('', Validators.required),
+    province: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
   });
 
   //TODO: Revisar si es util este metodo (para que sirve get?)
   get name() {
-    console.log(this.formRegister.get('name'));
     return this.formRegister.get('name');
+  }
+  get last_name() {
+    return this.formRegister.get('last_name');
   }
 
   /* Methods */
   onSubmit(event: Event) {
-    event.preventDefault();
-
-    this.user = {
-      name: this.formRegister.get('name')?.value,
-      last_name: this.formRegister.get('last_name')?.value,
-      email: this.formRegister.get('email')?.value,
-      password: this.formRegister.get('password')?.value,
-      cp: this.formRegister.get('cp')?.value,
-      phone: this.formRegister.get('phone')?.value,
-      address: this.formRegister.get('address')?.value,
-      address_number: this.formRegister.get('address_number')?.value,
-      province: this.formRegister.get('province')?.value,
-      city: this.formRegister.get('city')?.value,
-    };
+    this.formSubmitted = true;
+    if (this.formRegister.invalid) {
+      this.formRegister.markAllAsTouched();
+      return;
+    } else {
+      this.user = {
+        name: this.formRegister.get('name')?.value ?? 'pepe',
+        last_name: this.formRegister.get('last_name')?.value ?? '',
+        email: this.formRegister.get('email')?.value ?? '',
+        password: this.formRegister.get('password')?.value ?? '',
+        cp: this.formRegister.get('cp')?.value ?? '',
+        phone: this.formRegister.get('phone')?.value ?? '',
+        address: this.formRegister.get('address')?.value ?? '',
+        address_number: this.formRegister.get('address_number')?.value ?? '',
+        province: this.formRegister.get('province')?.value ?? '',
+        city: this.formRegister.get('city')?.value ?? '',
+      };
+    }
 
     this.service.createUser(this.user).subscribe(() => {
       return this.user;
