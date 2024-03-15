@@ -18,6 +18,7 @@
     height: 100%;
     border-top-right-radius: 15px;
     transition: all .5s ease;
+    opacity: 0;
 }
 
 .sidebar-content .inicio-container:hover {
@@ -142,6 +143,7 @@ input::placeholder {
 
 .open-nav {
     left: 0;
+    opacity: 1;
 }
 
 @media screen and (max-width: 1000px) {
