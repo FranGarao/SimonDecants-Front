@@ -9,14 +9,19 @@
 }
 
 .sidebar-content {
-    display: none;
+    display: block;
     background: #444;
     top: 5em;
-    left: 0;
+    left: -250px;
     position: fixed;
     width: 19%;
     height: 100%;
     border-top-right-radius: 15px;
+    transition: all .5s ease;
+}
+
+.sidebar-content li:hover, a:hover {
+    padding-left: 40px;
 }
 
 .btn-container {
@@ -122,8 +127,12 @@ input::placeholder {
     padding-bottom: 23px;
 }
 
-.open {
+.open-drop {
     display: block;
+}
+
+.open-nav {
+    left: 0;
 }
 
 @media screen and (max-width: 1000px) {
