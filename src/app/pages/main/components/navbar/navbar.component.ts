@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 routeParam: any|string;
 
+  openNavbar() {
+    const openNavbar = document.querySelector('.sidebar-content') as HTMLElement;
+    openNavbar.classList.toggle('open');
+  }
+
+  toggleSubMenu() {
+    const sidebar = document.querySelector('.submenu') as HTMLElement;
+    sidebar.classList.toggle('open');
+  }
+
 }
