@@ -10,12 +10,12 @@ routeParam: any|string;
 
   openNavbar() {
     const openNavbar = document.querySelector('.sidebar-content') as HTMLElement;
-    openNavbar.classList.toggle('open');
+    openNavbar.classList.toggle('open-nav');
   }
 
   toggleSubMenu() {
     const sidebar = document.querySelector('.submenu') as HTMLElement;
-    sidebar.classList.toggle('open');
+    sidebar.classList.toggle('open-drop');
   }
 
 }
