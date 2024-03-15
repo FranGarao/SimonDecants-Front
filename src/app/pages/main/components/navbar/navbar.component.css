@@ -20,8 +20,8 @@
     transition: all .5s ease;
 }
 
-.sidebar-content li:hover, a:hover {
-    padding-left: 40px;
+.sidebar-content .inicio-container:hover {
+    padding-left: 3px;
 }
 
 .btn-container {
@@ -93,6 +93,7 @@ li, li a {
     padding: 1rem;
     margin-top: 0;
     border-top-right-radius: 15px;
+    cursor: unset;
 }
 
 
@@ -110,10 +111,6 @@ input::placeholder {
     text-align: center;
 }
 
-/* .dropdown:hover .submenu {
-    display: block;
-} */
-
 .submenu {
     display: none;
     background-color: rgb(44, 44, 44);
@@ -123,8 +120,20 @@ input::placeholder {
     padding-top: 23px;
 }
 
+.submenu li:first-child:hover {
+    padding-left: 3px;
+}
+
 .submenu li:last-child {
     padding-bottom: 23px;
+}
+
+.submenu li:last-child:hover {
+    padding-left: 3px;
+}
+
+.preguntas-frecuentes-container:hover {
+    padding-left: 3px;
 }
 
 .open-drop {
