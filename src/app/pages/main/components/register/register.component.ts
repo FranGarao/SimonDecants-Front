@@ -40,7 +40,6 @@ export class RegisterComponent {
 
   ngOnInit() {
     this.getUsers();
-    this.getGeolocation();
   }
 
   /* Form */
@@ -66,6 +65,42 @@ export class RegisterComponent {
     return this.formRegister.get('last_name');
   }
 
+  get email() {
+    return this.formRegister.get('email');
+  }
+
+  get password() {
+    return this.formRegister.get('password');
+  }
+
+  get phone() {
+    return this.formRegister.get('phone');
+  }
+
+  get cp() {
+    return this.formRegister.get('cp');
+  }
+
+  get address() {
+    return this.formRegister.get('address');
+  }
+
+  get address_number() {
+    return this.formRegister.get('address_number');
+  }
+
+  get town() {
+    return this.formRegister.get('town');
+  }
+
+  get province() {
+    return this.formRegister.get('province');
+  }
+
+  get city() {
+    return this.formRegister.get('city');
+  }
+
   /* Methods */
   onSubmit(event: Event) {
     this.formSubmitted = true;
@@ -74,7 +109,7 @@ export class RegisterComponent {
       return;
     } else {
       this.user = {
-        name: this.formRegister.get('name')?.value ?? 'pepe',
+        name: this.formRegister.get('name')?.value ?? '',
         last_name: this.formRegister.get('last_name')?.value ?? '',
         email: this.formRegister.get('email')?.value ?? '',
         password: this.formRegister.get('password')?.value ?? '',
@@ -98,25 +133,26 @@ export class RegisterComponent {
       },
       error: (error: any) => {
         console.error(error);
-        throw new error();
       },
     });
   }
 
   getGeolocation() {
+    //TODO: !!IMPORTANTE
+    //*Verificar la ley en cuanto al procesamiento de estos datos. Posiblemente sea necesario crear terminos y condiciones.
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(async (position) => {
-        console.log('Latitud: ' + position.coords.latitude);
-        console.log('Longitud: ' + position.coords.longitude);
         let lon = position.coords.longitude;
         let lat = position.coords.latitude;
-        // let url = `https://www.google.com/maps/@${lat},${lon},15z`;
         let response = await fetch(
           `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
         );
         let data = await response.json();
-        console.log(data);
-        return data;
+
+        this.province?.setValue(data.address.state);
+        this.city?.setValue(data.address.city);
+        this.address?.setValue(data.address.road);
+        this.cp?.setValue(data.address.postcode);
       });
     } else {
       console.log('La geolocalización no está disponible en tu navegador');
