@@ -157,8 +157,5 @@ export class RegisterComponent {
     } else {
       console.log('La geolocalización no está disponible en tu navegador');
     }
-    //   navigator.geolocation.getCurrentPosition((position) => {
-    //     console.log(position);
-    //   });
   }
 }

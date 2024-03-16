@@ -3,13 +3,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-routeParam: any|string;
+  routeParam: any | string;
 
   openNavbar() {
-    const openNavbar = document.querySelector('.sidebar-content') as HTMLElement;
+    const openNavbar = document.querySelector(
+      '.sidebar-content',
+    ) as HTMLElement;
     openNavbar.classList.toggle('open-nav');
   }
 
@@ -17,5 +19,4 @@ routeParam: any|string;
     const sidebar = document.querySelector('.submenu') as HTMLElement;
     sidebar.classList.toggle('open-drop');
   }
-
 }
