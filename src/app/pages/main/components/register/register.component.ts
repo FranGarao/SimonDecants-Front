@@ -40,6 +40,7 @@ export class RegisterComponent {
 
   ngOnInit() {
     this.getUsers();
+    this.getGeolocation();
   }
 
   /* Form */
@@ -94,13 +95,34 @@ export class RegisterComponent {
     this.service.getUsers().subscribe({
       next: (users) => {
         this.users = users;
-        console.log(this.users);
       },
       error: (error: any) => {
         console.error(error);
+        throw new error();
       },
     });
   }
 
-  createUser() {}
+  getGeolocation() {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        console.log('Latitud: ' + position.coords.latitude);
+        console.log('Longitud: ' + position.coords.longitude);
+        let lon = position.coords.longitude;
+        let lat = position.coords.latitude;
+        // let url = `https://www.google.com/maps/@${lat},${lon},15z`;
+        let response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+        );
+        let data = await response.json();
+        console.log(data);
+        return data;
+      });
+    } else {
+      console.log('La geolocalización no está disponible en tu navegador');
+    }
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     console.log(position);
+    //   });
+  }
 }

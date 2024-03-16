@@ -21,12 +21,10 @@ export class AppService {
 
   createUser(user: User): Observable<{}> {
     const url = `${environment.backendUrl}/users/create`;
-    console.log(user);
-
     return this.http.post(url, user);
   }
   login(user: UserLogin): Observable<{}> {
     const url = `${environment.backendUrl}/users/login`;
-    return this.http.post(url, user); // Fixed: Added user as the second argument
+    return this.http.post(url, user);
   }
 }
