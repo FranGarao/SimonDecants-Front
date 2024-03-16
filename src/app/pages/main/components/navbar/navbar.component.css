@@ -5,14 +5,30 @@
     display: block;
     width: 19%;
     height: 100%;
+    /* background: #444; */
+}
+
+.sidebar-content {
+    display: block;
     background: #444;
-    opacity: 0.9;
+    top: 5em;
+    left: -999px;
+    position: fixed;
+    width: 19%;
+    height: 100%;
+    border-top-right-radius: 15px;
+    transition: all .5s ease;
+    opacity: 0;
+}
+
+.sidebar-content .inicio-container:hover {
+    padding-left: 3px;
 }
 
 .btn-container {
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin-top: 1rem;   
 }
 
 .open-nav-btn {
@@ -20,7 +36,7 @@
     height: 33px;
     margin: 0 0.5rem 0.5rem 0.5rem;
     cursor: pointer;
-    background-color: #444;
+    background-color: #4440;
     border-style: none;
     border-radius: 13px;
     /* z-index: 2; */
@@ -39,7 +55,9 @@
 }
 
 .category-container p {
-    margin-left: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .down-arrow {
@@ -50,8 +68,9 @@
     background-color: #444;
     border-style: none;
     border-radius: 13px;
-    margin-left: 1rem;
-    margin-right: 1.3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(270%);
 
     background-size: 100%;
     background-repeat: no-repeat;
@@ -70,10 +89,12 @@ li, li a {
 
 .input-container {
     background-color: #bbc54e;
-    height: rem;
     display: flex;
     justify-content: center;
     padding: 1rem;
+    margin-top: 0;
+    border-top-right-radius: 15px;
+    cursor: unset;
 }
 
 
@@ -91,10 +112,6 @@ input::placeholder {
     text-align: center;
 }
 
-.dropdown:hover .submenu {
-    display: block;
-}
-
 .submenu {
     display: none;
     background-color: rgb(44, 44, 44);
@@ -104,15 +121,36 @@ input::placeholder {
     padding-top: 23px;
 }
 
+.submenu li:first-child:hover {
+    padding-left: 3px;
+}
+
 .submenu li:last-child {
     padding-bottom: 23px;
 }
 
+.submenu li:last-child:hover {
+    padding-left: 3px;
+}
+
+.preguntas-frecuentes-container:hover {
+    padding-left: 3px;
+}
+
+.open-drop {
+    display: block;
+}
+
+.open-nav {
+    left: 0;
+    opacity: 1;
+}
 
 @media screen and (max-width: 1000px) {
-    .sidebar {
+    .sidebar, .sidebar-content {
         position: relative;
         width: 100%;
+        top: 0;
     }
 
     .btn-container {
@@ -128,4 +166,18 @@ input::placeholder {
         transform: translateX(-50%);
         background-color: #292929;
     }
+
+    .input-container {
+        border-top-right-radius: 0;
+    }
+
+    /* .open-nav {
+        left: unset;
+        display: block;
+    }
+
+    .sidebar-content {
+        display: none;
+    } */
+
 }

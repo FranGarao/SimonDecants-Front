@@ -13,18 +13,18 @@ body
   margin-bottom: 90px;
 }
 
-.container
+/* .container
 {
   width: 97%;
   
-  margin: 20px auto; /* auto me centra la página */
+  margin: 20px auto; 
 
-  overflow-x: auto;  /* scrollear */
+  overflow-x: auto;  
   overflow-y: auto;
 }
 
 .container .content
 {
   padding: 0 20px;
-  border-radius: 8px; /* redondeo los bordes de los th */
-}
+  border-radius: 8px; 
+} */
