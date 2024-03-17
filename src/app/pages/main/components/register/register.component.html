@@ -75,5 +75,5 @@
     <div *ngIf="cp?.invalid && (cp?.touched || cp?.dirty)">
         <p *ngIf="cp?.errors?.['required']">Campo invalido</p>
     </div>
-    <button (click)="onSubmit($event)">Registrarme</button>
+    <button (click)="onSubmit()">Registrarme</button>
 </form>

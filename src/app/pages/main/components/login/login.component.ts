@@ -76,6 +76,14 @@ export class LoginComponent {
           console.error(error);
         },
       });
+      this.service.setCookies().subscribe({
+        next: (response: any) => {
+          console.log(response);
+        },
+        error: (error: any) => {
+          console.error(error);
+        },
+      });
     } else {
       this.userNotFound = true;
     }

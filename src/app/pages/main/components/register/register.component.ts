@@ -24,6 +24,7 @@ import {
 //   }
 //   return null;
 // }
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -52,7 +53,6 @@ export class RegisterComponent {
     cp: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     address_number: new FormControl('', Validators.required),
-    town: new FormControl('', Validators.required),
     province: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
   });
@@ -89,10 +89,6 @@ export class RegisterComponent {
     return this.formRegister.get('address_number');
   }
 
-  get town() {
-    return this.formRegister.get('town');
-  }
-
   get province() {
     return this.formRegister.get('province');
   }
@@ -102,12 +98,18 @@ export class RegisterComponent {
   }
 
   /* Methods */
-  onSubmit(event: Event) {
+  onSubmit() {
     this.formSubmitted = true;
+
     if (this.formRegister.invalid) {
+      console.log(this.formRegister.invalid);
+      console.log(this.formRegister);
+
       this.formRegister.markAllAsTouched();
       return;
     } else {
+      console.log('gola');
+
       this.user = {
         name: this.formRegister.get('name')?.value ?? '',
         last_name: this.formRegister.get('last_name')?.value ?? '',
