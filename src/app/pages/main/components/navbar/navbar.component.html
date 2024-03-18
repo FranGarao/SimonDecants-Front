@@ -5,7 +5,10 @@
   
   <ul class="sidebar-content">
     <!-- <button class="close-nav-btn" ></button> -->
-    <li class="input-container"><input type="search" placeholder="Buscar producto"></li>
+    <li class="input-container">
+      <input type="search" placeholder="Buscar producto">
+      <button class="search-btn"></button>
+    </li>
     <li class="inicio-container"><a [routerLink]="['/home']">Inicio</a></li>
     <li class="dropdown">
       <div class="category-container" (click)="toggleSubMenu()">
