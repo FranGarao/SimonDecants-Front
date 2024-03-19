@@ -1,11 +1,15 @@
 <form action="" [formGroup]="formLogin">
-    <div>
+    <div class="arrow"></div>
+    <div class="email-container">
         <label for="">Correo</label>
         <input formControlName="email" type="text">
     </div>
-    <div>
+    <div class="password-container">
         <label for="">Contraseña</label>
         <input formControlName="password" type="text">
     </div>
+    <div class="login-btn-cnt">
+        <button class="login-button" (click)="login()">Ingresar</button>
+        <a href="">Recuperar contraseña</a>
+    </div>
 </form>
-<button (click)="login()">Iniciar sesión</button>

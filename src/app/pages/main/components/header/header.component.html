@@ -7,7 +7,9 @@
         <a [routerLink]="['/']"><span class="simon">Simon</span><span class="decants">Decants</span></a>
     </div>
     <div class="login-register-container">
-        <button class="login-link">Iniciar Sesión</button>
+        <button class="login-link" (click)="openLogin()">Iniciar
+            Sesión</button>
+        <app-login [ngClass]="{'login-form': showLogin, 'hidden':  !showLogin}" />
         <button [routerLink]="['/user/register']" class="register-link">Registrarse</button>
     </div>
     <!-- <div class="menu-kart-container"> -->
