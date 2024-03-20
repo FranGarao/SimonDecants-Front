@@ -144,4 +144,20 @@ header a:first-child:hover {
     .login-register-container button {
         font-size: 0.7rem;
     }
+
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        height: 170px;
+        width: 200px;
+        align-items: center;
+        padding: 10px;
+        background-color: #bbc54ebb;
+        border-radius: 10px;
+        color: #fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
 }

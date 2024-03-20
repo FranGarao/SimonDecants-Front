@@ -6,10 +6,15 @@
     </div>
     <div class="password-container">
         <label for="">Contraseña</label>
-        <input formControlName="password" type="text">
+        <input formControlName="password" type="password">
+    </div>
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+        <p *ngIf="password?.errors?.['required']">Campo invalido</p>
     </div>
     <div class="login-btn-cnt">
         <button class="login-button" (click)="login()">Ingresar</button>
         <a href="">Recuperar contraseña</a>
     </div>
 </form>
+<p *ngIf="userNotFound">El email o la contraseña son incorrectos.</p>
+
