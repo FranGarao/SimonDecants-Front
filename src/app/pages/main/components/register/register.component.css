@@ -31,3 +31,21 @@ input {
     padding: 0.5rem;
 }
 
+.register-btn-cnt {
+    display: flex;
+    justify-content: center;
+}
+
+.register-btn {
+    margin: 0 0.5rem 0 0.5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    background-color: #444444;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold; 
+}
+
