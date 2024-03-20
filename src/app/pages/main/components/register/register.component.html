@@ -17,35 +17,63 @@
         <label for="email">Correo electrónico</label>
         <input formControlName="email" name="email" type="text">
     </div>
+    <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+        <p *ngIf="email?.errors?.['required']">Campo invalido</p>
+    </div>
+    <div>
+        <label for="password">Contraseña</label>
+        <input formControlName="password" name="password" type="text">
+    </div>
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+        <p *ngIf="password?.errors?.['required']">Campo invalido</p>
+    </div>
     <!-- provincia/ciudad usar un selec/buscador para que no se ingresen provincias/ciudades invalidas o inexistentes -->
+    <div>
+        <h2>Dirección de envío</h2>
+        <button (click)="getGeolocation()">Aca va un botoncito de ubicacion</button>
+    </div>
     <div>
         <label for="province">Provincia</label>
         <input formControlName="province" name="province" type="text">
+    </div>
+    <div *ngIf="province?.invalid && (province?.touched || province?.dirty)">
+        <p *ngIf="province?.errors?.['required']">Campo invalido</p>
     </div>
     <div>
         <label for="city">Ciudad</label>
         <input formControlName="city" name="city" type="text">
     </div>
+    <div *ngIf="city?.invalid && (city?.touched || city?.dirty)">
+        <p *ngIf="city?.errors?.['required']">Campo invalido</p>
+    </div>
     <div>
         <label for="address">Dirección</label>
         <input formControlName="address" name="address" type="text">
+    </div>
+    <div *ngIf="address?.invalid && (address?.touched || address?.dirty)">
+        <p *ngIf="address?.errors?.['required']">Campo invalido</p>
     </div>
     <!-- hay que cambiar los nombres -->
     <div>
         <label for="address_number">Numero de direccion</label>
         <input formControlName="address_number" name="address_number" type="text">
     </div>
+    <div *ngIf="address_number?.invalid && (address_number?.touched || address_number?.dirty)">
+        <p *ngIf="address_number?.errors?.['required']">Campo invalido</p>
+    </div>
     <div>
         <label for="phone">Telefono (opcional)</label>
         <input formControlName="phone" name="phone" type="text">
+    </div>
+    <div *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
+        <p *ngIf="phone?.errors?.['required']">Campo invalido</p>
     </div>
     <div>
         <label for="cp">Código postal</label>
         <input formControlName="cp" name="cp" type="text">
     </div>
-    <div>
-        <label for="password">Contraseña</label>
-        <input formControlName="password" name="password" type="text">
+    <div *ngIf="cp?.invalid && (cp?.touched || cp?.dirty)">
+        <p *ngIf="cp?.errors?.['required']">Campo invalido</p>
     </div>
-    <button (click)="onSubmit($event)">Registrarme</button>
+    <button (click)="onSubmit()">Registrarme</button>
 </form>

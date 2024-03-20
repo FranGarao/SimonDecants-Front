@@ -24,6 +24,7 @@ import {
 //   }
 //   return null;
 // }
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -52,7 +53,6 @@ export class RegisterComponent {
     cp: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     address_number: new FormControl('', Validators.required),
-    town: new FormControl('', Validators.required),
     province: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
   });
@@ -65,15 +65,53 @@ export class RegisterComponent {
     return this.formRegister.get('last_name');
   }
 
+  get email() {
+    return this.formRegister.get('email');
+  }
+
+  get password() {
+    return this.formRegister.get('password');
+  }
+
+  get phone() {
+    return this.formRegister.get('phone');
+  }
+
+  get cp() {
+    return this.formRegister.get('cp');
+  }
+
+  get address() {
+    return this.formRegister.get('address');
+  }
+
+  get address_number() {
+    return this.formRegister.get('address_number');
+  }
+
+  get province() {
+    return this.formRegister.get('province');
+  }
+
+  get city() {
+    return this.formRegister.get('city');
+  }
+
   /* Methods */
-  onSubmit(event: Event) {
+  onSubmit() {
     this.formSubmitted = true;
+
     if (this.formRegister.invalid) {
+      console.log(this.formRegister.invalid);
+      console.log(this.formRegister);
+
       this.formRegister.markAllAsTouched();
       return;
     } else {
+      console.log('gola');
+
       this.user = {
-        name: this.formRegister.get('name')?.value ?? 'pepe',
+        name: this.formRegister.get('name')?.value ?? '',
         last_name: this.formRegister.get('last_name')?.value ?? '',
         email: this.formRegister.get('email')?.value ?? '',
         password: this.formRegister.get('password')?.value ?? '',
@@ -94,7 +132,6 @@ export class RegisterComponent {
     this.service.getUsers().subscribe({
       next: (users) => {
         this.users = users;
-        console.log(this.users);
       },
       error: (error: any) => {
         console.error(error);
@@ -102,5 +139,25 @@ export class RegisterComponent {
     });
   }
 
-  createUser() {}
+  getGeolocation() {
+    //TODO: !!IMPORTANTE
+    //*Verificar la ley en cuanto al procesamiento de estos datos. Posiblemente sea necesario crear terminos y condiciones.
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        let lon = position.coords.longitude;
+        let lat = position.coords.latitude;
+        let response = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
+        );
+        let data = await response.json();
+
+        this.province?.setValue(data.address.state);
+        this.city?.setValue(data.address.city);
+        this.address?.setValue(data.address.road);
+        this.cp?.setValue(data.address.postcode);
+      });
+    } else {
+      console.log('La geolocalización no está disponible en tu navegador');
+    }
+  }
 }

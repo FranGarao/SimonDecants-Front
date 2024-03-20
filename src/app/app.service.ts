@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { User, Users } from './pages/main/interfaces/Users';
@@ -21,12 +21,22 @@ export class AppService {
 
   createUser(user: User): Observable<{}> {
     const url = `${environment.backendUrl}/users/create`;
-    console.log(user);
-
     return this.http.post(url, user);
   }
   login(user: UserLogin): Observable<{}> {
     const url = `${environment.backendUrl}/users/login`;
-    return this.http.post(url, user); // Fixed: Added user as the second argument
+    return this.http.post(url, user);
+  }
+  setCookies(): Observable<{}> {
+    const url = `${environment.backendUrl}/users/login`;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    const options = { headers: headers, withCredentials: true };
+    return this.http.get(url, options);
+  }
+  logOut(): Observable<{}> {
+    const url = `${environment.backendUrl}/users/logout`;
+    return this.http.get(url);
   }
 }
