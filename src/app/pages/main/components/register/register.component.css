@@ -19,6 +19,7 @@
 
 .input-cnt label {
     margin-bottom: 0.2rem;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 input {
@@ -31,13 +32,25 @@ input {
     padding: 0.5rem;
 }
 
+.shipping-address-cnt h2 {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.location-btn {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
 .register-btn-cnt {
     display: flex;
     justify-content: center;
 }
 
 .register-btn {
-    margin: 0 0.5rem 0 0.5rem;
+    margin: 0.8rem 0.5rem 0 0.5rem;
     padding: 0 1rem;
     cursor: pointer;
     background-color: #444444;
@@ -47,5 +60,10 @@ input {
     color: white;
     font-size: 1rem;
     font-weight: bold; 
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.register-btn:hover {
+    background-color: #525252;
 }
 
