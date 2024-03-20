@@ -1,20 +1,72 @@
 
-div{
+form {
+    background-color: #bbc54e;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.arrow {
+    background-color: #bbc54e;
+    border-radius: 3.5px;
+    width: 15px;
+    height: 15px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 11.7rem;
+    left: 1.5rem;
+}
+
+.email-container {
     display: flex;
     flex-direction: column;
-    
-    span {
-        width: 80%;
-    }
-
-    input {
-        color: #1c1c1c;
-        border-radius: 10px;
-        padding: 5px;
-        background-color: #bdbbbb;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
-    }
 }
+
+.password-container {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: white;
+    margin-top: 0.5rem;
+}
+
+input {
+    border: none;
+    outline: none;
+    background-color: #ebebeb;
+    height: 1.5rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
+.login-btn-cnt {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.login-btn-cnt a {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    font-size: 15px;
+}
+
+.login-button {
+    background-color: #444444;
+    color: white;
+    border-radius: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    width: auto;
+    padding: 0 1rem;
+    font-family: "Josefin Sans", sans-serif;
+    cursor: pointer;
+    height: 1.5rem;
+}
+
+.login-button:hover {
+    background-color: #525252;
