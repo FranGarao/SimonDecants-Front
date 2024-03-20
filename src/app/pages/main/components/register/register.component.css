@@ -1,6 +1,33 @@
+.form-cnt {
+    display: flex;
+    justify-content: center;
+}
+
 .form-register{
-    width: 350px;
-    height: 425px;
     padding: 10px;
     color: #fff;
+    background-color: #bbc54e;
+    border-radius: 13px;
+    padding: 2rem;
 }
+
+.input-cnt {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.7rem;
+}
+
+.input-cnt label {
+    margin-bottom: 0.2rem;
+}
+
+input {
+    width: 15rem;
+    border: none;
+    outline: none;
+    background-color: #ebebeb;
+    height: 1.5rem;
+    border-radius: 2rem;
+    padding: 0.5rem;
+}
+
