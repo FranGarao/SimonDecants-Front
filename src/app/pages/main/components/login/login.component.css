@@ -3,6 +3,7 @@ form {
     background-color: #444444;
     padding: 1rem;
     border-radius: 15px;
+    height: 13.2rem;
 }
 
 form p {
@@ -18,7 +19,7 @@ form p {
     height: 15px;
     transform: rotate(45deg);
     position: absolute;
-    bottom: 11.7rem;
+    bottom: 12.6rem;
     left: 1.5rem;
 }
 
@@ -83,9 +84,17 @@ input {
 @media screen and (max-width: 1000px) {
 
     form {
-        position: relative;
-        bottom: 1rem;
+        position: fixed;
+        bottom: -2.6rem;
+        height: 13.2rem;
     }   
+
+    .arrow {
+        position: absolute;
+        bottom: 12.65rem;
+        left: 1.5rem;
+    }
+    
 }
 
  
