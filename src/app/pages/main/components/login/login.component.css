@@ -1,12 +1,12 @@
 
 form {
-    background-color: #bbc54e;
+    background-color: #444444;
     padding: 1rem;
     border-radius: 15px;
 }
 
 .arrow {
-    background-color: #bbc54e;
+    background-color: #444444;
     border-radius: 3.5px;
     width: 15px;
     height: 15px;
@@ -56,9 +56,10 @@ input {
 }
 
 .login-button {
-    background-color: #444444;
+    background-color: #bbc54e;
     color: white;
     border-radius: 2rem;
+    border-style: none;
     font-weight: bold;
     white-space: nowrap;
     width: auto;
@@ -66,10 +67,11 @@ input {
     font-family: "Josefin Sans", sans-serif;
     cursor: pointer;
     height: 1.5rem;
+    box-shadow: 0px 6px 6px rgb(0 0 0 / 23%);
 }
 
 .login-button:hover {
-    background-color: #525252;
+    background-color: #bac44dc9;
 }
 
 @media screen and (max-width: 1000px) {
