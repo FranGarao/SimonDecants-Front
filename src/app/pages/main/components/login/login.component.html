@@ -9,7 +9,7 @@
         <input formControlName="password" type="password">
     </div>
     <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
-        <p *ngIf="password?.errors?.['required']">Campo invalido</p>
+        <p style="margin-top: 0.2rem;" *ngIf="password?.errors?.['required']">*Ingrese su contraseña</p>
     </div>
     <div class="login-btn-cnt">
         <button class="login-button" (click)="login()">Ingresar</button>

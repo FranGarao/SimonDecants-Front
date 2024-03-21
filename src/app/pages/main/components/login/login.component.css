@@ -5,6 +5,12 @@ form {
     border-radius: 15px;
 }
 
+form p {
+    color: #bbc54e;
+    text-align: center;
+    font-size: small;
+}
+
 .arrow {
     background-color: #444444;
     border-radius: 3.5px;
