@@ -76,10 +76,6 @@
             <label for="phone">Teléfono (opcional)</label>
             <input formControlName="phone" name="phone" type="text">
         </div>
-        <div class="arrow" *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)"></div>
-        <div class="invalid-box" *ngIf="phone?.invalid && (phone?.touched || phone?.dirty)">
-            <p *ngIf="phone?.errors?.['required']">Campo inválido</p>
-        </div>
         <div class="input-cnt">
             <label for="cp">Código postal</label>
             <input formControlName="cp" name="cp" type="text">
