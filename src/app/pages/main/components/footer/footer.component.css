@@ -9,6 +9,7 @@ footer
   bottom: 0;                    /* Colocar el footer debajo de todo */
   width: 100%;
   position: fixed;
+  z-index: 999;
 }
 
 footer p {
