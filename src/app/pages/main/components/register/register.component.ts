@@ -33,7 +33,7 @@ import {
 export class RegisterComponent {
   //! Necesito users??
   private users: Users = [];
-  public formSubmitted: boolean = false;
+  private formSubmitted: boolean = false;
 
   //TODO: crear interfaz user
   private user = {} as User;
@@ -44,18 +44,27 @@ export class RegisterComponent {
   }
 
   /* Form */
-  formRegister = new FormGroup({
-    name: new FormControl('', Validators.required),
-    last_name: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', Validators.required),
-    phone: new FormControl('', Validators.required),
-    cp: new FormControl('', Validators.required),
-    address: new FormControl('', Validators.required),
-    address_number: new FormControl('', Validators.required),
-    province: new FormControl('', Validators.required),
-    city: new FormControl('', Validators.required),
-  });
+  formRegister = new FormGroup(
+    {
+      name: new FormControl('', Validators.required),
+      last_name: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
+      cp: new FormControl('', Validators.required),
+      address: new FormControl('', Validators.required),
+      address_number: new FormControl('', Validators.required),
+      province: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required),
+    },
+    // {
+    //   validators: this.customValidation
+    // }
+  );
+  /*Validation*/
+  // customValidation(control: AbstractControl): ValidationErrors | null {
+  //   const startDate = control.get('startDate').value;
+  //   const endDate = control.get('endDate').value;
 
   //TODO: Revisar si es util este metodo (para que sirve get?)
   get name() {
@@ -102,14 +111,9 @@ export class RegisterComponent {
     this.formSubmitted = true;
 
     if (this.formRegister.invalid) {
-      console.log(this.formRegister.invalid);
-      console.log(this.formRegister);
-
       this.formRegister.markAllAsTouched();
       return;
     } else {
-      console.log('gola');
-
       this.user = {
         name: this.formRegister.get('name')?.value ?? '',
         last_name: this.formRegister.get('last_name')?.value ?? '',

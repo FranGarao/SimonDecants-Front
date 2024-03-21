@@ -1,14 +1,14 @@
 <form action="" [formGroup]="formLogin">
     <div>
         <label for="">Email:</label>
-        <input formControlName="email" type="email">
+        <input formControlName="email" type="email" />
     </div>
     <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
         <p *ngIf="email?.errors?.['required']">Campo invalido</p>
     </div>
     <div>
         <label for="">Contraseña</label>
-        <input formControlName="password" type="password">
+        <input formControlName="password" type="password" />
     </div>
     <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
         <p *ngIf="password?.errors?.['required']">Campo invalido</p>
