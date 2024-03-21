@@ -71,3 +71,13 @@ input {
 .login-button:hover {
     background-color: #525252;
 }
+
+@media screen and (max-width: 1000px) {
+
+    form {
+        position: relative;
+        bottom: 1rem;
+    }   
+}
+
+ 
