@@ -7,8 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   public showLogin: boolean = false;
-
+  
   openLogin() {
     this.showLogin = !this.showLogin;
   }
 }
+

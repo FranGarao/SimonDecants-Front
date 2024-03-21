@@ -1,18 +1,19 @@
 <form action="" [formGroup]="formLogin">
-    <div>
-        <label for="">Email:</label>
-        <input formControlName="email" type="email" />
+    <div class="arrow"></div>
+    <div class="email-container">
+        <label for="">Correo</label>
+        <input formControlName="email" type="text">
     </div>
-    <div *ngIf="email?.invalid && (email?.touched || email?.dirty)">
-        <p *ngIf="email?.errors?.['required']">Campo invalido</p>
-    </div>
-    <div>
+    <div class="password-container">
         <label for="">Contraseña</label>
         <input formControlName="password" type="password" />
     </div>
     <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
-        <p *ngIf="password?.errors?.['required']">Campo invalido</p>
+        <p style="margin-top: 0.2rem;" *ngIf="password?.errors?.['required']">*Ingrese su contraseña</p>
     </div>
-    <p *ngIf="userNotFound">El email o la contraseña son incorrectos.</p>
-    <button (click)="login()">Iniciar sesión</button>
+    <div class="login-btn-cnt">
+        <button class="login-button" (click)="login()">Ingresar</button>
+        <a href="">Recuperar contraseña</a>
+    </div>
 </form>
+<p *ngIf="userNotFound">El email o la contraseña son incorrectos.</p>
