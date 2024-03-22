@@ -22,6 +22,7 @@ import { MainComponent } from './pages/main/main.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 /* Modules */
 import { MainModule } from './pages/main/main.module';
+import { FormProductsComponent } from './pages/dashboard/components/form-products/form-products.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { MainModule } from './pages/main/main.module';
     DashboardComponent,
     MainComponent,
     NotFoundComponent,
+    FormProductsComponent,
   ],
   imports: [
     BrowserModule,
