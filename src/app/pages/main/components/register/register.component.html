@@ -77,12 +77,12 @@
             <input formControlName="phone" name="phone" type="text">
         </div>
         <div class="input-cnt">
-            <label for="zipCode">Código postal</label>
-            <input formControlName="zipCode" name="zipCode" type="text">
+            <label for="zip_code">Código postal</label>
+            <input formControlName="zip_code" name="zip_code" type="text">
         </div>
-        <div class="arrow" *ngIf="zipCode?.invalid && (zipCode?.touched || zipCode?.dirty)"></div>
-        <div class="invalid-box" *ngIf="zipCode?.invalid && (zipCode?.touched || zipCode?.dirty)">
-            <p *ngIf="zipCode?.errors?.['required']">Campo inválido</p>
+        <div class="arrow" *ngIf="zip_code?.invalid && (zip_code?.touched || zip_code?.dirty)"></div>
+        <div class="invalid-box" *ngIf="zip_code?.invalid && (zip_code?.touched || zip_code?.dirty)">
+            <p *ngIf="zip_code?.errors?.['required']">Campo inválido</p>
         </div>
         <div class="register-btn-cnt">
             <button class="register-btn" (click)="onSubmit()">Registrarme</button>

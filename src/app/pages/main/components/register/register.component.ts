@@ -127,11 +127,11 @@ export class RegisterComponent {
           zip_code: this.formRegister.get('cp')?.value ?? '',
         },
       };
-    }
 
-    this.service.createUser(this.user).subscribe(() => {
-      return this.user;
-    });
+      this.service.createUser(user).subscribe(() => {
+        return user;
+      });
+    }
   }
   getUsers() {
     this.service.getUsers().subscribe({
