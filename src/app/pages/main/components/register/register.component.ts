@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Users, User } from '../../interfaces/Users';
+import { User } from '../../interfaces/Users';
 import { AppService } from '../../../../app.service';
 import {
   FormControl,
@@ -32,9 +32,8 @@ import {
 })
 export class RegisterComponent {
   //! Necesito users??
-  private users: Users = [];
   private formSubmitted: boolean = false;
-
+  private users: User[] = [];
   //TODO: crear interfaz user
   private user = {} as User;
   constructor(private service: AppService) {}
@@ -51,7 +50,7 @@ export class RegisterComponent {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
-      cp: new FormControl('', Validators.required),
+      zip_code: new FormControl('', Validators.required),
       address: new FormControl('', Validators.required),
       address_number: new FormControl('', Validators.required),
       province: new FormControl('', Validators.required),
@@ -86,8 +85,8 @@ export class RegisterComponent {
     return this.formRegister.get('phone');
   }
 
-  get cp() {
-    return this.formRegister.get('cp');
+  get zip_code() {
+    return this.formRegister.get('zip_code');
   }
 
   get address() {
@@ -114,17 +113,19 @@ export class RegisterComponent {
       this.formRegister.markAllAsTouched();
       return;
     } else {
-      this.user = {
+      const user: User = {
         name: this.formRegister.get('name')?.value ?? '',
         last_name: this.formRegister.get('last_name')?.value ?? '',
         email: this.formRegister.get('email')?.value ?? '',
         password: this.formRegister.get('password')?.value ?? '',
-        cp: this.formRegister.get('cp')?.value ?? '',
         phone: this.formRegister.get('phone')?.value ?? '',
-        address: this.formRegister.get('address')?.value ?? '',
-        address_number: this.formRegister.get('address_number')?.value ?? '',
-        province: this.formRegister.get('province')?.value ?? '',
-        city: this.formRegister.get('city')?.value ?? '',
+        location: {
+          province: this.formRegister.get('province')?.value ?? '',
+          city: this.formRegister.get('city')?.value ?? '',
+          address: this.formRegister.get('address')?.value ?? '',
+          address_number: this.formRegister.get('address_number')?.value ?? '',
+          zip_code: this.formRegister.get('cp')?.value ?? '',
+        },
       };
     }
 
@@ -158,7 +159,7 @@ export class RegisterComponent {
         this.province?.setValue(data.address.state);
         this.city?.setValue(data.address.city);
         this.address?.setValue(data.address.road);
-        this.cp?.setValue(data.address.postcode);
+        this.zip_code?.setValue(data.address.postcode);
       });
     } else {
       console.log('La geolocalización no está disponible en tu navegador');
