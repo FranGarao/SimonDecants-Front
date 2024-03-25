@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { User, Users } from './pages/main/interfaces/Users';
 import { UserLogin } from './pages/main/interfaces/UserLogin';
+import { ProductsList } from './pages/main/interfaces/Products';
 
 @Injectable({
   providedIn: 'root',
@@ -11,9 +12,6 @@ import { UserLogin } from './pages/main/interfaces/UserLogin';
 export class AppService {
   constructor(private http: HttpClient) {}
 
-  getProduct(): Observable<any> {
-    return this.http.get(`${environment.backendUrl}/products`);
-  }
   getUsers(): Observable<any> {
     const url = `${environment.backendUrl}/users`;
     return this.http.get(url);
@@ -39,12 +37,8 @@ export class AppService {
     const url = `${environment.backendUrl}/users/logout`;
     return this.http.get(url);
   }
-  getProducts(): Observable<any> {
+  getProducts(): Observable<ProductsList> {
     const url = `${environment.backendUrl}/products`;
-    return this.http.get(url);
-  }
-  createProducts(products: any): Observable<any> {
-    const url = `${environment.backendUrl}/products/create`;
-    return this.http.get(url, products);
+    return this.http.get<ProductsList>(url);
   }
 }
