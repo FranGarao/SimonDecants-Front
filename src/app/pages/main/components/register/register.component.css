@@ -12,6 +12,72 @@
     margin-top: 2rem;
 }
 
+/* ======================== Switcheo del register: Datos personales/ Dirección de envío ======================== */
+
+.switch-cnt {
+    text-align: center;
+    padding-bottom: 1rem
+}
+
+h6 {
+    font-size: 1rem;
+    color: #bbc54e;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+h6 span {
+    padding: 0 20px;
+    font-weight: 700;
+}
+
+/*
+[type="checkbox"]:checked,         Oculto el checked, esté activado o no 
+[type="checkbox"]:not(:checked){
+display: none;
+}
+*/
+
+.checkbox:checked + label,        /* todos los label posteriores a un checkbox que estén seleccionados */
+.checkbox:not(:checked) + label{  /* todos los label posteriores a un checkbox que no estén seleccionados */
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+
+.checkbox:checked + label:before,         /* todos los label posteriores a un checkbox que estén seleccionados */
+.checkbox:not(:checked) + label:before{   /* todos los label posteriores a un checkbox que no estén seleccionados */
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #020305;
+  font-family: 'unicons';
+  background-image: url('/assets/icons/arrow-up-left.svg');
+  background-size: cover;
+  content: '';                            /* content debe estar presente obligatoriamente en un pseudoelemento :before */
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+.checkbox:checked + label:before {         /* todos los label posteriores a un checkbox en el DOM que estén seleccionados se van a desplazar y rotar según lo indicado */
+  transform: translateX(44px) rotate(-270deg);
+}
+
+
+/* ======================== FIN Switcheo del register ======================== */
+
 .input-cnt {
     display: flex;
     flex-direction: column;
