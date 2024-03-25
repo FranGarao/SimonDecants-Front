@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 //import { P, User } from '../../interfaces/Users';
-import { AppService } from '../../../../app.service';
 import {
   FormControl,
   FormGroup,
@@ -9,6 +8,8 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { log } from 'console';
+import { DashboardService } from '../../dashboard.service';
+import { Product } from '../../../main/interfaces/Products';
 
 @Component({
   selector: 'app-form-products',
@@ -17,7 +18,7 @@ import { log } from 'console';
 })
 
 export class FormProductsComponent {
-  constructor(private service: AppService){
+  constructor(private dashboardService: DashboardService){
     
   }
   formCreate= new FormGroup({
@@ -34,19 +35,19 @@ export class FormProductsComponent {
   })
   /* Methods */
   onSubmit() {
-    const product = {
-      title:this.formCreate.get('title')?.value,
-      price:this.formCreate.get('price')?.value,
-      category:this.formCreate.get('category')?.value,
-      gender:this.formCreate.get('gender')?.value,
-      size:this.formCreate.get('size')?.value,
-      stock:this.formCreate.get('stock')?.value,
-      img:this.formCreate.get('img')?.value,
-      description:this.formCreate.get('description')?.value,
-      status:this.formCreate.get('status')?.value,
+    const product: any = {
+      title:this.formCreate.get('title')?.value?? "",
+      //price:this.formCreate.get('price')?.value?? 0,
+      category:this.formCreate.get('category')?.value?? "",
+      gender:this.formCreate.get('gender')?.value?? "",
+      size:this.formCreate.get('size')?.value?? "",
+      //stock:this.formCreate.get('stock')?.value?? 0,
+      img:this.formCreate.get('img')?.value?? "",
+      description:this.formCreate.get('description')?.value?? "",
+      status:this.formCreate.get('status')?.value?? ""
     }
     console.log(product);
-    this.service.createProducts(product).subscribe({
+    this.dashboardService.createProduct(product).subscribe({
       next:(response)=> {
         return response;
       },

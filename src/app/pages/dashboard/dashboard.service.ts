@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { Product } from '../main/interfaces/Products';
 
 @Injectable({
   providedIn: 'root',
@@ -13,8 +14,14 @@ export class DashboardService {
     const url = `${environment.backendUrl}/products`;
     return this.http.get(url);
   }
-  createProducts(products: any): Observable<any> {
+  createProduct(product: Product): Observable<any> {
     const url = `${environment.backendUrl}/products/create`;
-    return this.http.get(url, products);
+    return this.http.post(url, product);
+  }
+  updateProduct(product: Product): Observable <{}> {
+    const url = `${environment.backendUrl}/products/update`;
+    return this.http.put(url,product);
   }
 }
+
+// revisar los any

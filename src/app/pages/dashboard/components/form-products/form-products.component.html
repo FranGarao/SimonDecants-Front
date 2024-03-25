@@ -9,7 +9,7 @@
     </div> -->
     <div class="input-cnt">
         <label for="price">price</label>
-        <input formControlName="price" name="price" type="text" required>
+        <input formControlName="price" name="price" type="number" required>
     </div>
     <div class="input-cnt">
         <label for="category">category</label>
@@ -25,19 +25,19 @@
     </div>
     <div class="input-cnt">
         <label for="stock">stock</label>
-        <input formControlName="stock" name="stock" type="text" required>
+        <input formControlName="stock" name="stock" type="number" required>
     </div>
     <div class="input-cnt">
         <label for="img">img</label>
         <input formControlName="img" name="img" type="text" required>
     </div>
     <div class="input-cnt">
-        <label for="description">Nombre</label>
+        <label for="description">description</label>
         <input formControlName="description" name="description" type="text" required>
     </div>
     <div class="input-cnt">
-        <label for="status">Nombre</label>
+        <label for="status">status</label>
         <input formControlName="status" name="status" type="text" required>
     </div>
-    <button (click)="onSubmit()">subir producto</button>
+    <button (click)="onSubmit()" type="submit">subir producto</button>
 </form>
