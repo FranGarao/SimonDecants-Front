@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
-import { User, Users } from './pages/main/interfaces/Users';
-import { UserLogin } from './pages/main/interfaces/UserLogin';
-import { ProductsList } from './pages/main/interfaces/Products';
+import { User, Users } from './interfaces/Users';
+import { UserLogin } from './interfaces/UserLogin';
+import { ProductsList } from './interfaces/Products';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +12,9 @@ import { ProductsList } from './pages/main/interfaces/Products';
 export class AppService {
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any> {
+  getUsers(): Observable<Users> {
     const url = `${environment.backendUrl}/users`;
-    return this.http.get(url);
+    return this.http.get<Users>(url);
   }
 
   createUser(user: User): Observable<{}> {

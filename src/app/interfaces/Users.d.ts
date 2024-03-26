@@ -1,5 +1,8 @@
 import { Location } from './Location';
-export type Users = User[];
+export interface Users {
+  ok: boolean
+  users: User[]
+  };
 
 export interface User {
   name: string;
