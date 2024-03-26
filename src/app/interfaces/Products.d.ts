@@ -1,4 +1,8 @@
-export type ProductsList = Product[];
+import { Location } from './Location';
+export interface ProductsList {
+  ok: boolean;
+  products: Product[];
+}
 
 export interface Product {
   id: number;
@@ -11,4 +15,5 @@ export interface Product {
   discount: number;
   brand: string;
   size_id: number;
+  location: Location;
 }
