@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../interfaces/Users';
+import { User, Users } from '../../../../interfaces/Users';
 import { AppService } from '../../../../app.service';
 import {
   FormControl,
@@ -33,11 +33,10 @@ import {
 export class RegisterComponent {
   //! Necesito users??
   private formSubmitted: boolean = false;
-  private users: User[] = [];
+  private users: User[];
   //TODO: crear interfaz user
-  private user = {} as User;
+  private user: User; 
   constructor(private service: AppService) {}
-
   ngOnInit() {
     this.getUsers();
   }
@@ -135,7 +134,7 @@ export class RegisterComponent {
   }
   getUsers() {
     this.service.getUsers().subscribe({
-      next: (users) => {
+      next: (users: any) => {
         this.users = users;
       },
       error: (error: any) => {
