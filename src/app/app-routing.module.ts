@@ -4,7 +4,7 @@ import { MainComponent } from './pages/main/main.component';
 import { RegisterComponent } from './pages/main/components/register/register.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CreateProductComponent } from './pages/dashboard/components/create-product/create-product.component';
-import { FormProductsComponent } from './pages/dashboard/components/create-product/create-product.component';
+
 
 const routes: Routes = [
   {
@@ -17,7 +17,6 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: 'create/product', component: CreateProductComponent },
-      { path: 'update/product', component: FormProductsComponent }
     ]
   },
 ];

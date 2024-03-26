@@ -22,8 +22,10 @@ import { MainComponent } from './pages/main/main.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 /* Modules */
 import { MainModule } from './pages/main/main.module';
-import { FormProductsComponent } from './pages/dashboard/components/create-product/create-product.component';
+
 import { UpdateProductComponent } from './pages/dashboard/components/update-product/update-product.component';
+import { CreateProductComponent } from './pages/dashboard/components/create-product/create-product.component';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,7 @@ import { UpdateProductComponent } from './pages/dashboard/components/update-prod
     DashboardComponent,
     MainComponent,
     NotFoundComponent,
-    FormProductsComponent,
+    CreateProductComponent, // Add the imported component here
     UpdateProductComponent,
   ],
   imports: [
