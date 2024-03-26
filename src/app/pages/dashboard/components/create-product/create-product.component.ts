@@ -12,12 +12,12 @@ import { DashboardService } from '../../dashboard.service';
 import { Product } from '../../../main/interfaces/Products';
 
 @Component({
-  selector: 'app-form-products',
-  templateUrl: './form-products.component.html',
-  styleUrl: './form-products.component.css'
+  selector: 'app-create-product',
+  templateUrl: './create-product.component.html',
+  styleUrl: './create-product.component.css'
 })
 
-export class FormProductsComponent {
+export class CreateProductComponent {
   constructor(private dashboardService: DashboardService){
     
   }
