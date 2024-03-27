@@ -31,6 +31,9 @@ import {
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
+
+  isFlipped: boolean = false;
+
   //! Necesito users??
   private formSubmitted: boolean = false;
   private users: User[];
@@ -163,5 +166,15 @@ export class RegisterComponent {
     } else {
       console.log('La geolocalización no está disponible en tu navegador');
     }
+  }
+
+  toggleCard() {
+    this.isFlipped = !this.isFlipped;
+
+    const cardBack = document.querySelector('.card-back') as HTMLElement;
+    cardBack.classList.toggle('back-rotate');
+
+    const cardFront = document.querySelector('.card-front') as HTMLElement;
+    cardFront.classList.toggle('front-rotate');
   }
 }
