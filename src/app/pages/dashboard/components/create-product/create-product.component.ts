@@ -7,9 +7,8 @@ import {
   ValidationErrors,
   AbstractControl,
 } from '@angular/forms';
-import { log } from 'console';
 import { DashboardService } from '../../dashboard.service';
-import { Product } from '../../../main/interfaces/Products';
+import { Product } from '../../../../interfaces/Products';
 
 @Component({
   selector: 'app-create-product',

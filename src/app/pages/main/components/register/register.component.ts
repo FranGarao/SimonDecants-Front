@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../interfaces/Users';
+import { User, Users } from '../../../../interfaces/Users';
 import { AppService } from '../../../../app.service';
 import {
   FormControl,
@@ -32,13 +32,15 @@ import { Console } from 'node:console';
   styleUrl: './register.component.css',
 })
 export class RegisterComponent {
+
+  isFlipped: boolean = false;
+
   //! Necesito users??
   private formSubmitted: boolean = false;
-  private users: User[] = [];
+  private users: User[];
   //TODO: crear interfaz user
-  private user = {} as User;
+  private user: User;
   constructor(private service: AppService) {}
-
   ngOnInit() {
     this.getUsers();
   }
@@ -137,7 +139,7 @@ export class RegisterComponent {
   }
   getUsers() {
     this.service.getUsers().subscribe({
-      next: (users) => {
+      next: (users: any) => {
         this.users = users;
       },
       error: (error: any) => {
@@ -166,5 +168,15 @@ export class RegisterComponent {
     } else {
       console.log('La geolocalización no está disponible en tu navegador');
     }
+  }
+
+  toggleCard() {
+    this.isFlipped = !this.isFlipped;
+
+    const cardBack = document.querySelector('.card-back') as HTMLElement;
+    cardBack.classList.toggle('back-rotate');
+
+    const cardFront = document.querySelector('.card-front') as HTMLElement;
+    cardFront.classList.toggle('front-rotate');
   }
 }

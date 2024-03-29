@@ -1,9 +1,27 @@
 .form-cnt {
     display: flex;
     justify-content: center;
+    perspective: 800px;
 }
 
-.form-register {
+ .form-register {
+    transition: transform 0.4s;
+    position: relative;
+} 
+
+.background {
+    background-color: #bbc54e;
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    z-index: 2;
+    position: absolute;
+    transition-delay: 0.1s;
+    opacity: 1;
     padding: 10px;
     color: #fff;
     background-color: #bbc54e;
@@ -11,6 +29,99 @@
     padding: 2rem;
     margin-top: 2rem;
 }
+
+.card-back {
+    z-index: 1;
+    transition-delay: 0.1s;
+    opacity: 0;
+    padding: 10px;
+    color: #fff;
+    background-color: #bbc54e;
+    border-radius: 13px;
+    padding: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    bottom: 0;
+}
+
+.back-rotate {
+    transition-delay: 0.1s;
+    transform: rotateY(180deg);
+    opacity: 1;
+    transition: opacity 0.1s;
+}
+
+.front-rotate {
+    transition-delay: 0.1s;
+    transform: rotateY(180deg);
+    opacity: 0;
+    transition: opacity 0.1s;
+    z-index: 1!important;
+}
+
+/* ======================== Switcheo del register: Datos personales/ Dirección de envío ======================== */
+
+.switch-cnt {
+    text-align: center;
+    padding-bottom: 1rem
+}
+
+h6 {
+    font-size: 1rem;
+    color: #bbc54e;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+h6 span {
+    padding: 0 20px;
+    font-weight: 700;
+}
+
+[type="checkbox"]:checked,        /* Oculto el checked, esté activado o no */
+[type="checkbox"]:not(:checked){
+display: none;
+}
+
+.checkbox:checked + label,        /* todos los label posteriores a un checkbox que estén seleccionados */
+.checkbox:not(:checked) + label{  /* todos los label posteriores a un checkbox que no estén seleccionados */
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+
+.checkbox:checked + label:before,         /* todos los label posteriores a un checkbox que estén seleccionados */
+.checkbox:not(:checked) + label:before{   /* todos los label posteriores a un checkbox que no estén seleccionados */
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #020305;
+  font-family: 'unicons';
+  background-image: url('/assets/icons/arrow-up-left.svg');
+  background-size: cover;
+  content: '';                            /* content debe estar presente obligatoriamente en un pseudoelemento :before */
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+.checkbox:checked + label:before {         /* todos los label posteriores a un checkbox en el DOM que estén seleccionados se van a desplazar y rotar según lo indicado */
+  transform: translateX(44px) rotate(-270deg);
+}
+
+
+/* ======================== FIN Switcheo del register ======================== */
 
 .input-cnt {
     display: flex;
@@ -61,9 +172,13 @@ input {
     color: white;
 }
 
+.card-front h2 {
+    text-align: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
 .shipping-address-cnt h2 {
     text-align: center;
-    margin-top: 1rem;
     font-family: "Josefin Sans", sans-serif;
 }
 

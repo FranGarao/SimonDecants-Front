@@ -49,6 +49,7 @@ import { CreateProductComponent } from './pages/dashboard/components/create-prod
     ReactiveFormsModule,
     RouterModule,
     MainModule,
+    RouterLink,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
