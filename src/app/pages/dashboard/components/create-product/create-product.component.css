@@ -5,8 +5,14 @@ form {
 }
 
 .input-cnt{
+    display: flex;
     margin: 10px;
+    flex-direction: column;
+    align-items: center;
 }
-label {
+label{
     color: white
+}
+span {
+    color: white;
 }

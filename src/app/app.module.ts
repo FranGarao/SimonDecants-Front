@@ -25,6 +25,7 @@ import { MainModule } from './pages/main/main.module';
 
 import { UpdateProductComponent } from './pages/dashboard/components/update-product/update-product.component';
 import { CreateProductComponent } from './pages/dashboard/components/create-product/create-product.component';
+import { ProductListComponent } from './pages/dashboard/components/product-list/product-list.component';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { CreateProductComponent } from './pages/dashboard/components/create-prod
     MainComponent,
     NotFoundComponent,
     CreateProductComponent, // Add the imported component here
-    UpdateProductComponent,
+    UpdateProductComponent, ProductListComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +53,6 @@ import { CreateProductComponent } from './pages/dashboard/components/create-prod
     RouterLink,
   ],
   providers: [provideClientHydration()],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

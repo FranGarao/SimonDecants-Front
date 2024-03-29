@@ -23,15 +23,16 @@ export class CreateProductComponent {
   formCreate= new FormGroup({
     
       title: new FormControl('', Validators.required),
-      price: new FormControl('', Validators.required),
+      price: new FormControl(null, Validators.required),
       category: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
       size: new FormControl('', Validators.required),
-      stock: new FormControl('', Validators.required),
+      stock: new FormControl(null, Validators.required),
       img: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       status: new FormControl('', Validators.required),
   })
+  addProduct(){}
   /* Methods */
   onSubmit() {
     const product: any = {
