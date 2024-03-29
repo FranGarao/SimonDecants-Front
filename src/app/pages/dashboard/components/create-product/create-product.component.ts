@@ -26,27 +26,25 @@ export class CreateProductComponent {
       price: new FormControl(null, Validators.required),
       category: new FormControl('', Validators.required),
       gender: new FormControl('', Validators.required),
-      size: new FormControl('', Validators.required),
-      stock: new FormControl(null, Validators.required),
       img: new FormControl('', Validators.required),
       description: new FormControl('', Validators.required),
       status: new FormControl('', Validators.required),
+      size: new FormControl('', Validators.required),
+      stock: new FormControl(null, Validators.required),
   })
-  addProduct(){}
   /* Methods */
-  onSubmit() {
-    const product: any = {
-      title:this.formCreate.get('title')?.value?? "",
-      //price:this.formCreate.get('price')?.value?? 0,
-      category:this.formCreate.get('category')?.value?? "",
-      gender:this.formCreate.get('gender')?.value?? "",
-      size:this.formCreate.get('size')?.value?? "",
-      //stock:this.formCreate.get('stock')?.value?? 0,
-      img:this.formCreate.get('img')?.value?? "",
-      description:this.formCreate.get('description')?.value?? "",
-      status:this.formCreate.get('status')?.value?? ""
+  addProduct() {
+    const product: Product = {
+      title: this.formCreate.value.title ?? "",
+      price: this.formCreate.value.price ?? "",
+      category: this.formCreate.value.category ?? "",
+      gender: this.formCreate.value.gender ?? "",
+      sizeId: this.formCreate.value.size ?? "",
+      stock: this.formCreate.value.stock ?? "",
+      img: this.formCreate.value.img ?? "",
+      description: this.formCreate.value.description ?? "",
+      status: this.formCreate.value.status ?? ""
     }
-    console.log(product);
     this.dashboardService.createProduct(product).subscribe({
       next:(response)=> {
         return response;
@@ -55,7 +53,7 @@ export class CreateProductComponent {
         return error
       }
     })
-    
   }
+    
 
 }

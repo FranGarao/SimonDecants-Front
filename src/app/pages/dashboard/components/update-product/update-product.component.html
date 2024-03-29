@@ -1,43 +1,66 @@
-<form action="" [formGroup]= "formUpdate">
+<form [formGroup]= "formUpdate" (ngSubmit)="updateProduct()">
     <div class="input-cnt">
         <label for="title">title</label>
         <input formControlName="title" name="title" type="text" required>
+        <span *ngIf="formUpdate.get('title')?.hasError('required') && formUpdate.get('title')?.touched">
+            El campo title es <strong>requerido</strong>
+        </span>
     </div>
-    <!-- <div class="arrow" *ngIf="name?.invalid && (name?.touched || name?.dirty)"></div>
-    <div class="invalid-box" *ngIf="name?.invalid && (name?.touched || name?.dirty)">
-        <p *ngIf="name?.errors?.['required']">Campo inválido</p>
-    </div> -->
     <div class="input-cnt">
         <label for="price">price</label>
         <input formControlName="price" name="price" type="number" required>
+        <span *ngIf="formUpdate.get('price')?.hasError('required') && formUpdate.get('price')?.touched">
+            El campo price es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="category">category</label>
         <input formControlName="category" name="category" type="text" required>
+        <span *ngIf="formUpdate.get('category')?.hasError('required') && formUpdate.get('category')?.touched">
+            El campo category es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="gender">gender</label>
         <input formControlName="gender" name="gender" type="text" required>
+        <span *ngIf="formUpdate.get('gender')?.hasError('required') && formUpdate.get('gender')?.touched">
+            El campo gender es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="size">size</label>
         <input formControlName="size" name="size" type="text" required>
+        <span *ngIf="formUpdate.get('size')?.hasError('required') && formUpdate.get('size')?.touched">
+            El campo size es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="stock">stock</label>
         <input formControlName="stock" name="stock" type="number" required>
+        <span *ngIf="formUpdate.get('stock')?.hasError('required') && formUpdate.get('stock')?.touched">
+            El campo stock es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="img">img</label>
         <input formControlName="img" name="img" type="text" required>
+        <span *ngIf="formUpdate.get('img')?.hasError('required') && formUpdate.get('img')?.touched">
+            El campo img es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="description">description</label>
         <input formControlName="description" name="description" type="text" required>
+        <span *ngIf="formUpdate.get('description')?.hasError('required') && formUpdate.get('description')?.touched">
+            El campo description es <strong>requerido</strong>
+        </span>
     </div>
     <div class="input-cnt">
         <label for="status">status</label>
         <input formControlName="status" name="status" type="text" required>
+        <span *ngIf="formUpdate.get('status')?.hasError('required') && formUpdate.get('status')?.touched">
+            El campo status es <strong>requerido</strong>
+        </span>
     </div>
     <div>
         <button (click)="onSubmit()" type="submit">Actualizar producto</button>

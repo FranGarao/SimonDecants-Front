@@ -31,6 +31,7 @@ export class UpdateProductComponent {
     description: new FormControl('', Validators.required),
     status: new FormControl('', Validators.required),
 })
+updateProduct(){}
 /* Methods */
 onSubmit() {
   const product: any = {
