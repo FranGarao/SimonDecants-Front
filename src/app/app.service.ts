@@ -17,9 +17,9 @@ export class AppService {
     return this.http.get<Users>(url);
   }
 
-  createUser(user: User): Observable<{}> {
+  createUser(user: User): Observable<Users> {
     const url = `${environment.backendUrl}/users/create`;
-    return this.http.post(url, user);
+    return this.http.post<Users>(url, user);
   }
   login(user: UserLogin): Observable<{}> {
     const url = `${environment.backendUrl}/users/login`;

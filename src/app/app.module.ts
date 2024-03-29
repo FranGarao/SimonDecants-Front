@@ -43,6 +43,7 @@ import { MainModule } from './pages/main/main.module';
     ReactiveFormsModule,
     RouterModule,
     MainModule,
+    RouterLink,
   ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],

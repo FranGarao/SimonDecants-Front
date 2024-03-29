@@ -38,7 +38,7 @@ export class RegisterComponent {
   private formSubmitted: boolean = false;
   private users: User[];
   //TODO: crear interfaz user
-  private user: User; 
+  private user: User;
   constructor(private service: AppService) {}
   ngOnInit() {
     this.getUsers();
