@@ -39,7 +39,7 @@
     background-color: #bbc54e;
     border-radius: 13px;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 0.8rem;
     position: relative;
     bottom: 0;
 }
@@ -187,6 +187,24 @@ input {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
+}
+
+.location-btn button {
+    background-color: #444444;
+    margin: 0.8rem 0.5rem 0 0.5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.location-btn button:hover {
+    background-color: #525252;
 }
 
 .register-btn-cnt {
