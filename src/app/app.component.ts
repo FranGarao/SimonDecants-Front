@@ -6,25 +6,29 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'SimonDecants-Front';
-  readonly APIUrl = 'http://localhost:3001/';
-  public products: ProductsList = [];
+  // readonly APIUrl = 'http://localhost:3001/';
+  // public products: ProductsList = [];
 
-  constructor(private router: Router, private http: HttpClient, private service: AppService) { }
+  constructor(
+    private router: Router,
+    private http: HttpClient,
+    private service: AppService,
+  ) {}
 
-  ngOnInit(): void {
-    this.getProducts();
-  }
+  // ngOnInit(): void {
+  //   this.getProducts();
+  // }
 
-  getProducts() {
-    this.service.getProduct().subscribe((data) => {
-      this.products = data.data;
-    });
-  }
-  getRegister() {
-    this.router.navigateByUrl('users/register');
-  }
+  // getProducts() {
+  //   this.service.getProduct().subscribe((data) => {
+  //     this.products = data.data;
+  //   });
+  // }
+  // getRegister() {
+  //   this.router.navigateByUrl('users/register');
+  // }
 }

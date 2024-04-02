@@ -1,0 +1,101 @@
+<div class="switch-cnt">    
+    <h6><span>Datos personales</span><span>Dirección de envío</span></h6>
+    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log" (change)="toggleCard()">
+    <label for="reg-log"></label>
+</div>
+<div class="form-cnt">
+    <form class="form-register" [formGroup]="formRegister" [ngClass]="{ 'flipped': isFlipped }">
+        <div class="card-front">
+            <h2>Datos personales</h2>
+            <div class="input-cnt">
+                <label for="name">Nombre</label>
+                <input formControlName="name" name="name" type="text" required>
+            </div>
+            <div class="arrow" *ngIf="name?.invalid && (name?.touched || name?.dirty)"></div>
+            <div class="invalid-box" *ngIf="name?.invalid && (name?.touched || name?.dirty)">
+                <p *ngIf="name?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="last_name">Apellido</label>
+                <input formControlName="last_name" name="last_name" type="text">
+            </div>
+            <div class="arrow" *ngIf="last_name?.invalid && (last_name?.touched || last_name?.dirty)"></div>
+            <div class="invalid-box" *ngIf="last_name?.invalid && (last_name?.touched || last_name?.dirty)">
+                <p *ngIf="last_name?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="email">Correo electrónico</label>
+                <input formControlName="email" name="email" type="text">
+            </div>
+            <div class="arrow" *ngIf="email?.invalid && (email?.touched || email?.dirty)"></div>
+            <div class="invalid-box" *ngIf="email?.invalid && (email?.touched || email?.dirty)">
+                <p *ngIf="email?.errors?.['email'] || email?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="password">Contraseña</label>
+                <input formControlName="password" name="password" type="text">
+            </div>
+            <div class="arrow" *ngIf="password?.invalid && (password?.touched || password?.dirty)"></div>
+            <div class="invalid-box" *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+                <p *ngIf="password?.errors?.['required']">Campo inválido</p>
+            </div>
+        </div>
+        <!-- provincia/ciudad usar un selec/buscador para que no se ingresen provincias/ciudades invalidas o inexistentes -->
+        <div class="card-back">
+            <div class="shipping-address-cnt">
+                <h2>Dirección de envío</h2>
+                <div class="location-btn">
+                    <button (click)="getGeolocation()">Aca va un botoncito de ubicacion</button>
+                </div>
+            </div>
+            <div class="input-cnt">
+                <label for="province">Provincia</label>
+                <input formControlName="province" name="province" type="text">
+            </div>
+            <div class="arrow" *ngIf="province?.invalid && (province?.touched || province?.dirty)"></div>
+            <div class="invalid-box" *ngIf="province?.invalid && (province?.touched || province?.dirty)">
+                <p *ngIf="province?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="city">Ciudad</label>
+                <input formControlName="city" name="city" type="text">
+            </div>
+            <div class="arrow" *ngIf="city?.invalid && (city?.touched || city?.dirty)"></div>
+            <div class="invalid-box" *ngIf="city?.invalid && (city?.touched || city?.dirty)">
+                <p *ngIf="city?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="address">Dirección</label>
+                <input formControlName="address" name="address" type="text">
+            </div>
+            <div class="arrow" *ngIf="address?.invalid && (address?.touched || address?.dirty)"></div>
+            <div class="invalid-box" *ngIf="address?.invalid && (address?.touched || address?.dirty)">
+                <p *ngIf="address?.errors?.['required']">Campo inválido</p>
+            </div>
+            <!-- hay que cambiar los nombres -->
+            <div class="input-cnt">
+                <label for="address_number">Número de dirección</label>
+                <input formControlName="address_number" name="address_number" type="text">
+            </div>
+            <div class="arrow" *ngIf="address_number?.invalid && (address_number?.touched || address_number?.dirty)"></div>
+            <div class="invalid-box" *ngIf="address_number?.invalid && (address_number?.touched || address_number?.dirty)">
+                <p *ngIf="address_number?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="input-cnt">
+                <label for="phone">Teléfono (opcional)</label>
+                <input formControlName="phone" name="phone" type="text">
+            </div>
+            <div class="input-cnt">
+                <label for="zip_code">Código postal</label>
+                <input formControlName="zip_code" name="zip_code" type="text">
+            </div>
+            <div class="arrow" *ngIf="zip_code?.invalid && (zip_code?.touched || zip_code?.dirty)"></div>
+            <div class="invalid-box" *ngIf="zip_code?.invalid && (zip_code?.touched || zip_code?.dirty)">
+                <p *ngIf="zip_code?.errors?.['required']">Campo inválido</p>
+            </div>
+            <div class="register-btn-cnt">
+                <button class="register-btn" (click)="onSubmit()">Registrarme</button>
+            </div>
+        </div>
+    </form>
+</div>

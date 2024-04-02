@@ -1,0 +1,19 @@
+<form action="" [formGroup]="formLogin">
+    <div class="arrow"></div>
+    <div class="email-container">
+        <label for="">Correo</label>
+        <input formControlName="email" type="text">
+    </div>
+    <div class="password-container">
+        <label for="">Contraseña</label>
+        <input formControlName="password" type="password" />
+    </div>
+    <div *ngIf="password?.invalid && (password?.touched || password?.dirty)">
+        <p style="margin-top: 0.2rem;" *ngIf="password?.errors?.['required']">*Ingrese su contraseña</p>
+    </div>
+    <div class="login-btn-cnt">
+        <button class="login-button" (click)="login()">Ingresar</button>
+        <a href="">Recuperar contraseña</a>
+    </div>
+</form>
+<p *ngIf="userNotFound">El email o la contraseña son incorrectos.</p>

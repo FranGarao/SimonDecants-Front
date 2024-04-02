@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background: #292929;
+  font-family: 'Roboto', sans-serif;
+  color: #33353a;
+  margin-bottom: 90px;
+}
+/*Oculta los elementos, se puede reutilizar*/
+.hidden{
+  display: none;
+}
+/* .container
+{
+  width: 97%;
+  
+  margin: 20px auto; 
+
+  overflow-x: auto;  
+  overflow-y: auto;
+}
+
+.container .content
+{
+  padding: 0 20px;
+  border-radius: 8px; 
+} */

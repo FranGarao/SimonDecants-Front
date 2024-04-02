@@ -1,0 +1,25 @@
+footer
+{
+  color: #bbc54e; 
+  font-size: 13.6px;
+  background: rgb(26 26 26);
+  padding: 17px 15px;
+  text-align: center;
+  margin-top: 15px;
+  bottom: 0;                    /* Colocar el footer debajo de todo */
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}
+
+footer p {
+  margin-top: 0.5rem;
+}
+
+.iconosFooter
+{
+  margin-right: 10px;
+  margin-top: 5px;
+  width: 25px;
+  float: left;                 /* Coloca el elemento a la izquierda de todo */
+}

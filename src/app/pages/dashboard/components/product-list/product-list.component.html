@@ -1,0 +1,34 @@
+<div>Product List</div>
+<!--<div class="container">
+    <div class="title">
+        <h4>Listado de Productos</h4>
+        <button type="button" class="btn btn-primary" routerLink="/add">Agregar Producto</button>
+    </div>
+
+    <button type="button" routerLink="/add">Crear Producto<button>
+
+    <table *ngIf="listProducts.length > 0" class="table table-hover">
+        
+            <ul>
+                <li>Nombre</li>
+                <li>Descripcion</li>
+                <li>Precio</li>
+                <li>Stock</li>
+                <li></li>
+            </ul>
+        
+        <tbody>
+        <tr *ngFor="let item of listProducts" class="table-active">
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.stock }}</td>
+            <td>
+                <button routerLink="/edit/{{ item.id }}" type="button" >Edit</button>
+                <button (click)="deleteProduct(item.id!)" type="button" >Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+      <h5 *ngIf="listProducts.length == 0">No hay productos para mostrar</h5>
+</div>-->

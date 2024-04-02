@@ -1,0 +1,163 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.title-position {
+    position: absolute; /* Hace que este contenedor tenga posición absoluta */
+    left: 50%; /* Mueve el elemento hacia el centro del header */
+    transform: translateX(-50%); /* Corrige la posición del elemento */
+}
+
+header a:first-child {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2.2rem;  
+    font-family: 'Playfair Display SC', serif;
+    text-align: center;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
+}
+
+header a:first-child:hover {
+    cursor: pointer;
+}
+
+.simon {
+    color: white;
+}
+
+.decants {
+    color: #bbc54e;
+}
+
+.login-register-container button {
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    width: auto;
+    padding: 0 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+
+    /* Inhabilitar selección arrastrando con el mouse y click izquierdo */
+    user-select: none;
+    -moz-user-select: none;     /* Para Firefox */
+    -webkit-user-select: none;  /* Para Safari y Chrome */
+    -ms-user-select: none;      /* Para Internet Explorer/Edge */
+}
+
+.kart-nav {
+    width: 30px;
+    height: 33px;
+    margin: 0 0.5rem 0rem 0.5rem;
+    cursor: pointer;
+    background-color: #292929;
+    border-style: none;
+    border-radius: 13px;
+    /* z-index: 2; */
+    
+    background-image: url('/assets/icons/cart2.svg'); 
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+ .login-register-container {
+    margin-left: auto;
+}
+
+.login-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+    background-color: #444444;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+}
+
+.login-link:hover {
+    background-color: #525252;
+}
+
+.register-link {
+    width: 90px;
+    height: 42px;
+    margin: 0 0.5rem 0 0.5rem;
+    cursor: pointer;
+    background-color: #bbc54e;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+}
+
+.register-link:hover {
+    background-color: #bac44dc9;
+}
+
+.login-form {
+    display: block;
+    position: fixed;
+    margin-top: 1rem;
+    transform: translateX(3.5%);
+    z-index: 2;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-right: 0;
+    }
+    
+    .login-register-container {
+        margin-left: unset;
+        white-space: nowrap;
+        margin-top: 1rem;
+    }
+
+    .title-position {
+        position: relative;
+        left: unset;
+        transform: unset;
+    }
+
+    .kart-nav {
+        margin-top: 1rem;
+        margin-left: 5rem;
+    }
+
+    .login-register-container button {
+        font-size: 0.7rem;
+    }
+
+    .login-form{
+        display: flex;
+        flex-direction: column;
+        height: 170px;
+        width: 200px;
+        align-items: center;
+        padding: 10px;
+        background-color: #bbc54ebb;
+        border-radius: 10px;
+        color: #fff;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+}
+}
