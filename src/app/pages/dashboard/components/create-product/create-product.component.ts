@@ -20,7 +20,7 @@ export class CreateProductComponent {
   constructor(private dashboardService: DashboardService){
     
   }
-  formCreate= new FormGroup({
+  formCreate = new FormGroup({
     
       title: new FormControl('', Validators.required),
       price: new FormControl(null, Validators.required),
@@ -31,6 +31,9 @@ export class CreateProductComponent {
       status: new FormControl('', Validators.required),
       size: new FormControl('', Validators.required),
       stock: new FormControl(null, Validators.required),
+      discount: new FormControl(null, Validators.required),
+      brand: new FormControl(null, Validators.required),
+
   })
   /* Methods */
   addProduct() {
@@ -39,11 +42,14 @@ export class CreateProductComponent {
       price: this.formCreate.value.price ?? "",
       category: this.formCreate.value.category ?? "",
       gender: this.formCreate.value.gender ?? "",
-      sizeId: this.formCreate.value.size ?? "",
+      size_id: this.formCreate.value.size ?? "",
       stock: this.formCreate.value.stock ?? "",
       img: this.formCreate.value.img ?? "",
       description: this.formCreate.value.description ?? "",
-      status: this.formCreate.value.status ?? ""
+      status: this.formCreate.value.status ?? "",
+      discount: this.formCreate.value.discount ?? "",
+      brand: this.formCreate.value.brand ?? "",
+
     }
     this.dashboardService.createProduct(product).subscribe({
       next:(response)=> {

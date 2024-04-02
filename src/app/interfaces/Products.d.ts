@@ -12,9 +12,11 @@ export interface Product {
   img: string;
   description: string;
   status: string;
+  discount: string;
+  brand: string
   price: string;
   stock: string;
-  sizeId: string;
+  size_id: string;
 }
 
 /*

@@ -1,4 +1,4 @@
-<form [formGroup]= "formCreate" (ngSubmit)="addProduct()">
+<form [formGroup]="formCreate" (ngSubmit)="addProduct()">
     <div class="input-cnt">
         <label for="title">title</label>
         <input formControlName="title" name="title" type="text" placeholder="Ingrese titulo">
@@ -42,6 +42,13 @@
         </span>
     </div>
     <div class="input-cnt">
+        <label for="discount">discount</label>
+        <input formControlName="discount" name="discount" type="text" placeholder="Ingrese discount">
+        <span *ngIf="formCreate.get('discount')?.hasError('required') && formCreate.get('discount')?.touched">
+            El campo discount es <strong>requerido</strong>
+        </span>
+    </div>
+    <div class="input-cnt">
         <label for="img">img</label>
         <input formControlName="img" name="img" type="text" placeholder="Ingrese una imagen">
         <span *ngIf="formCreate.get('img')?.hasError('required') && formCreate.get('img')?.touched">
@@ -60,6 +67,13 @@
         <input formControlName="status" name="status" type="text" placeholder="Ingrese status">
         <span *ngIf="formCreate.get('status')?.hasError('required') && formCreate.get('status')?.touched">
             El campo status es <strong>requerido</strong>
+        </span>
+    </div>
+    <div class="input-cnt">
+        <label for="brand">brand</label>
+        <input formControlName="brand" name="brand" type="text" placeholder="Ingrese brand">
+        <span *ngIf="formCreate.get('brand')?.hasError('required') && formCreate.get('brand')?.touched">
+            El campo brand es <strong>requerido</strong>
         </span>
     </div>
     <div>
