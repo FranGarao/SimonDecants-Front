@@ -14,8 +14,14 @@ export class DashboardService {
     const url = `${environment.backendUrl}/products`;
     return this.http.get(url);
   }
-  createProducts(product: Product): Observable<any> {
+  createProduct(product: Product): Observable<any> {
     const url = `${environment.backendUrl}/products/create`;
     return this.http.post(url, product);
   }
+  updateProduct(product: Product): Observable <{}> {
+    const url = `${environment.backendUrl}/products/update`;
+    return this.http.put(url,product);
+  }
 }
+
+// revisar los any

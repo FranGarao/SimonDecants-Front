@@ -8,6 +8,7 @@ import {
   ValidationErrors,
   AbstractControl,
 } from '@angular/forms';
+import { Console } from 'node:console';
 
 // function customValidation(control: AbstractControl): ValidationErrors | null {
 //   const startDate = control.get('startDate').value;
@@ -109,6 +110,7 @@ export class RegisterComponent {
 
   /* Methods */
   onSubmit() {
+    // TODO: VER Q HACE ESTA VARIABLE
     this.formSubmitted = true;
 
     if (this.formRegister.invalid) {
@@ -157,7 +159,7 @@ export class RegisterComponent {
           `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`,
         );
         let data = await response.json();
-
+          console.log(data)
         this.province?.setValue(data.address.state);
         this.city?.setValue(data.address.city);
         this.address?.setValue(data.address.road);

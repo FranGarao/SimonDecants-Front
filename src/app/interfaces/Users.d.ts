@@ -2,7 +2,7 @@ import { Location } from './Location';
 export interface Users {
   ok: boolean
   users: User[]
-  };
+  }
 
 export interface User {
   name: string;

@@ -5,15 +5,24 @@ export interface ProductsList {
 }
 
 export interface Product {
-  id: number;
+  id?: number;
   title: string;
   category: string;
   gender: string;
   img: string;
   description: string;
   status: string;
-  discount: number;
-  brand: string;
-  size_id: number;
-  location: Location;
+  discount: string;
+  brand: string
+  price: string;
+  stock: string;
+  size_id: string;
 }
+
+/*
+cambie ;
+discount: number; por status: string;
+brand: string; por price: string;
+size_id: number; por sizeId: string;
+location: Location; lo borre 
+*/
