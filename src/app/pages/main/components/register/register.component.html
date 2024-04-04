@@ -5,7 +5,7 @@
 </div>
 <div class="form-cnt">
     <form class="form-register" [formGroup]="formRegister" [ngClass]="{ 'flipped': isFlipped }">
-        <div class="card-front">
+        <div class="card-front" [ngClass]="{'front-rotate': this.isFlipped === true}">
             <h2>Datos personales</h2>
             <div class="input-cnt">
                 <label for="name">Nombre</label>
@@ -41,11 +41,11 @@
             </div>
         </div>
         <!-- provincia/ciudad usar un selec/buscador para que no se ingresen provincias/ciudades invalidas o inexistentes -->
-        <div class="card-back">
+        <div class="card-back" [ngClass]="{'back-rotate': this.isFlipped === true}">
             <div class="shipping-address-cnt">
                 <h2>Dirección de envío</h2>
                 <div class="location-btn">
-                    <button (click)="getGeolocation()">Aca va un botoncito de ubicacion</button>
+                    <button (click)="getGeolocation()"><img src="/assets/icons/geo-alt-fill.svg" alt="search-location">  Buscar ubicación</button>
                 </div>
             </div>
             <div class="input-cnt">

@@ -27,7 +27,7 @@
     background-color: #bbc54e;
     border-radius: 13px;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 0.8rem;
 }
 
 .card-back {
@@ -39,7 +39,7 @@
     background-color: #bbc54e;
     border-radius: 13px;
     padding: 2rem;
-    margin-top: 2rem;
+    margin-top: 0.8rem;
     position: relative;
     bottom: 0;
 }
@@ -63,13 +63,14 @@
 
 .switch-cnt {
     text-align: center;
-    padding-bottom: 1rem
+    margin-top: 5rem;
 }
 
 h6 {
-    font-size: 1rem;
+    font-size: 1.22rem;
     color: #bbc54e;
     font-family: "Josefin Sans", sans-serif;
+    margin: 1rem 0 1rem 0rem;
 }
 
 h6 span {
@@ -93,7 +94,7 @@ display: none;
   padding: 0;
   margin: 10px auto;
   cursor: pointer;
-  background-color: #ffeba7;
+  background-color: #bbc54e;
 }
 
 .checkbox:checked + label:before,         /* todos los label posteriores a un checkbox que estén seleccionados */
@@ -108,7 +109,7 @@ display: none;
   background-image: url('/assets/icons/arrow-up-left.svg');
   background-size: cover;
   content: '';                            /* content debe estar presente obligatoriamente en un pseudoelemento :before */
-  z-index: 20;
+  z-index: 1;
   top: -10px;
   left: -10px;
   line-height: 36px;
@@ -188,6 +189,24 @@ input {
     margin-bottom: 1rem;
 }
 
+.location-btn button {
+    background-color: #444444;
+    margin: 0.8rem 0.5rem 0 0.5rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    border-style: none;
+    border-radius: 13px;
+    height: 2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.location-btn button:hover {
+    background-color: #525252;
+}
+
 .register-btn-cnt {
     display: flex;
     justify-content: center;
@@ -214,5 +233,13 @@ input {
 @media screen and (max-width: 1000px) {
     .form-register { 
         margin-top: 0;
+    }
+
+    .switch-cnt {
+        margin-top: unset;
+    }
+
+    h6 {
+        font-size: 1rem;
     }
 }

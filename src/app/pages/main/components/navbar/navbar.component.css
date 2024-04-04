@@ -5,6 +5,7 @@
     display: block;
     width: 19%;
     height: 100%;
+    z-index: 1;
     /* background: #444; */
 }
 

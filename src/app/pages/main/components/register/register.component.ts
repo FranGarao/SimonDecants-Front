@@ -172,11 +172,5 @@ export class RegisterComponent {
 
   toggleCard() {
     this.isFlipped = !this.isFlipped;
-
-    const cardBack = document.querySelector('.card-back') as HTMLElement;
-    cardBack.classList.toggle('back-rotate');
-
-    const cardFront = document.querySelector('.card-front') as HTMLElement;
-    cardFront.classList.toggle('front-rotate');
   }
 }
