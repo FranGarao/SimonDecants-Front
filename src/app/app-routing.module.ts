@@ -7,13 +7,19 @@ import { CreateProductComponent } from './pages/dashboard/components/create-prod
 import { UpdateProductComponent } from './pages/dashboard/components/update-product/update-product.component';
 import { ProductListComponent } from './pages/dashboard/components/product-list/product-list.component';
 import { HomeComponent } from './pages/main/components/home/home.component';
+import { ProductsComponent } from './pages/components/products/products.component';
+import { ProductsFilterComponent } from './pages/components/products-filter/products-filter.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children: [{ path: 'user/register', component: RegisterComponent }, { path: 'home', component: HomeComponent, children: [{ path: 'products-list'}]}],
+    children: [
+      { path: 'user/register', component: RegisterComponent }, 
+      { path: 'home', component: HomeComponent, 
+      children: [{ path: 'products-list', component: ProductsComponent}, { path: 'products-filter', component: ProductsFilterComponent}]
+    }]
   },
   {
     path: 'dashboard',

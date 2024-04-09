@@ -27,6 +27,7 @@ import { UpdateProductComponent } from './pages/dashboard/components/update-prod
 import { CreateProductComponent } from './pages/dashboard/components/create-product/create-product.component';
 import { ProductListComponent } from './pages/dashboard/components/product-list/product-list.component';
 import { ProductsComponent } from './pages/components/products/products.component';
+import { ProductsFilterComponent } from './pages/components/products-filter/products-filter.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { ProductsComponent } from './pages/components/products/products.componen
     MainComponent,
     NotFoundComponent,
     CreateProductComponent, // Add the imported component here
-    UpdateProductComponent, ProductListComponent, ProductsComponent
+    UpdateProductComponent, ProductListComponent, ProductsComponent, ProductsFilterComponent
   ],
   imports: [
     BrowserModule,
