@@ -6,13 +6,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CreateProductComponent } from './pages/dashboard/components/create-product/create-product.component';
 import { UpdateProductComponent } from './pages/dashboard/components/update-product/update-product.component';
 import { ProductListComponent } from './pages/dashboard/components/product-list/product-list.component';
+import { HomeComponent } from './pages/main/components/home/home.component';
 
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    children: [{ path: 'user/register', component: RegisterComponent }],
+    children: [{ path: 'user/register', component: RegisterComponent }, { path: 'home', component: HomeComponent, children: [{ path: 'products-list'}]}],
   },
   {
     path: 'dashboard',
