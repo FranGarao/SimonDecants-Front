@@ -1,0 +1,43 @@
+.filter-header b {
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 0.5rem;
+}
+
+.filter-description {
+    display: flex;
+    justify-content: space-around;
+}
+
+.border-ctn {
+    display: flex;
+    justify-content: center;
+}
+
+.border {
+    background-color: grey;
+    width: 65%;
+    height: 1.45px;
+}
+
+.filter-select-ctn {
+    display: flex;
+    justify-content: space-around;
+}
+
+.filter-select-ctn select {
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    color: white;
+    background-color: rgb(110, 110, 110);
+    border-radius: 13px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    position: relative;
+    left: 20px;
+    border: none;
+}
+
+.filter-select-ctn select option {
+    background-color: rgb(34, 34, 34);
+    margin: 0.8rem;
+}
