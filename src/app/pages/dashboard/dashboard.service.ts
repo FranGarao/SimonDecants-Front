@@ -10,17 +10,18 @@ import { Product } from '../../interfaces/Products';
 export class DashboardService {
   constructor(private http: HttpClient) {}
 
+  //TODO: Cambiar any por interfaz correspondiente
   getProducts(): Observable<any> {
     const url = `${environment.backendUrl}/products`;
     return this.http.get(url);
   }
-  createProduct(product: Product): Observable<any> {
+  createProduct(product: Product) {
     const url = `${environment.backendUrl}/products/create`;
     return this.http.post(url, product);
   }
-  updateProduct(product: Product): Observable <{}> {
+  updateProduct(product: Product) {
     const url = `${environment.backendUrl}/products/update`;
-    return this.http.put(url,product);
+    return this.http.put(url, product);
   }
 }
 

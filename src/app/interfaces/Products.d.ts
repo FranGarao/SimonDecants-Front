@@ -13,8 +13,8 @@ export interface Product {
   description: string;
   status: string;
   discount: string;
-  brand: string
-  price: string;
+  brand: string;
+  price: number;
   stock: string;
   size_id: string;
 }

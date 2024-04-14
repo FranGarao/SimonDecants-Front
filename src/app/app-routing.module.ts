@@ -7,7 +7,6 @@ import { CreateProductComponent } from './pages/dashboard/components/create-prod
 import { UpdateProductComponent } from './pages/dashboard/components/update-product/update-product.component';
 import { ProductListComponent } from './pages/dashboard/components/product-list/product-list.component';
 
-
 const routes: Routes = [
   {
     path: '',
@@ -21,12 +20,13 @@ const routes: Routes = [
       { path: 'product/create', component: CreateProductComponent },
       { path: 'product/update', component: UpdateProductComponent },
       { path: 'product', component: ProductListComponent },
-
-    ]
+    ],
   },
   {
-    path: '**', redirectTo: '', pathMatch: 'full' 
-  }
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
